@@ -1,0 +1,143 @@
+# Content of the CV page. Each list is rendered as "when — what (where)".
+
+bio: >-
+  Jacopo Ciambella is Associate Professor of Solid and Structural Mechanics in
+  the Department of Structural and Geotechnical Engineering at Sapienza
+  University of Rome. He received his PhD in Structural Engineering from
+  Sapienza in 2010, with a thesis on the experimental testing and nonlinear
+  viscoelastic modelling of filled rubber developed with Bridgestone Technical
+  Centre Europe, which received the Sapienza Doctoral Award for the best PhD
+  dissertation in Engineering. He was Lecturer in Composites Engineering at the
+  University of Bristol (2012–2013) and a Visiting Fellow there until 2017. His
+  research addresses the finite-strain mechanics of soft dissipative solids –
+  nonlinear viscoelasticity and viscoplasticity, physics-augmented neural
+  constitutive models, fracture of elastomers and magneto-active materials –
+  as well as vibration-based structural identification. He serves on the
+  editorial boards of Scientific Reports and Applications in Engineering
+  Science, is Associate Editor of Frontiers in Materials, and holds the Italian
+  National Scientific Qualification as Full Professor.
+
+positions:
+  - when: "2020 – present"
+    what: "Associate Professor of Solid and Structural Mechanics"
+    where: "Department of Structural and Geotechnical Engineering, Sapienza University of Rome"
+  - when: "2012 – 2020"
+    what: "Assistant Professor of Solid and Structural Mechanics"
+    where: "Department of Structural and Geotechnical Engineering, Sapienza University of Rome"
+  - when: "2012 – 2013"
+    what: "Lecturer in Composites Engineering"
+    where: "Department of Civil Engineering, University of Bristol, UK"
+  - when: "2010 – 2012"
+    what: "Postdoctoral Researcher"
+    where: "Department of Structural and Geotechnical Engineering, Sapienza University of Rome"
+
+visiting:
+  - when: "2013 – 2017"
+    what: "Visiting Fellow"
+    where: "Department of Aerospace Engineering, University of Bristol, UK"
+  - when: "2008"
+    what: "Visiting PhD student"
+    where: "Institut Jean Le Rond d'Alembert, Université Pierre et Marie Curie, Paris, France"
+  - when: "2005"
+    what: "Visiting graduate student"
+    where: "Institute of Fluid Science, Tohoku University, Sendai, Japan"
+
+education:
+  - when: "2021"
+    what: "Italian National Scientific Qualification (ASN) as Full Professor in Structural Mechanics"
+  - when: "2010"
+    what: "PhD in Structural Engineering"
+    where: "Sapienza University of Rome. Thesis: “Experimental testing and nonlinear viscoelastic modelling of filled rubber”"
+  - when: "2006"
+    what: "MSc in Electronic Engineering, 110/110 cum laude"
+    where: "Sapienza University of Rome"
+  - when: "2003"
+    what: "BEng in Electronic Engineering, 110/110 cum laude"
+    where: "Sapienza University of Rome"
+
+editorial:
+  - when: "2026 – present"
+    what: "Editorial Board Member"
+    where: "Scientific Reports (Springer Nature)"
+  - when: "2026 – present"
+    what: "Associate Editor"
+    where: "Frontiers in Materials"
+  - when: "2018 – present"
+    what: "Editorial Board Member"
+    where: "Applications in Engineering Science (Elsevier)"
+  - when: "ongoing"
+    what: "Reviewer for more than 60 international journals"
+    where: "including J. Mech. Phys. Solids, Int. J. Solids Struct., Meccanica, Proc. R. Soc. A"
+
+service:
+  - when: "2017 – present"
+    what: "Member of the Board"
+    where: "PhD Programme in Theoretical and Applied Mechanics, Sapienza University of Rome"
+  - when: "2017 – present"
+    what: "Promoter and Coordinator"
+    where: "Double Degree Programme between Sapienza University of Rome and École Centrale de Nantes"
+  - when: "2022 – present"
+    what: "Erasmus Academic Coordinator"
+    where: "Faculty of Civil and Industrial Engineering, Sapienza University of Rome"
+  - when: "2015 – present"
+    what: "Erasmus Academic Coordinator"
+    where: "Civil Engineering degree programme, Sapienza University of Rome"
+  - when: "2012 – 2022"
+    what: "Co-founder and Member"
+    where: "DIAMONDS s.r.l., Sapienza spin-off in structural identification and monitoring"
+  - when: "2016 – 2019"
+    what: "Member, National Technical Committee D3 on bridges"
+    where: "AIPCR – World Road Association"
+  - when: "2013 – 2015"
+    what: "Promoter and organiser (with S.S. Rahatekar), MSc in Advanced Composites"
+    where: "Bristol Composites Institute, University of Bristol"
+  - when: "2012 – 2014"
+    what: "Member of the Management Committee"
+    where: "Doctoral Training Centre in Advanced Composites (ACCIS), University of Bristol"
+  - when: "2012 – 2019"
+    what: "External examiner of doctoral and research-master theses"
+    where: "École Centrale de Nantes (2019); University of Manchester (2014); RMIT University (2014); University of Bristol (2012, 2014)"
+
+organisation:
+  - when: "2011 – 2026"
+    what: "Organising committees"
+    where: "RAM3 – Recent Advances in Mechanics and Mathematics of Materials (2017, 2019, 2021, 2024, 2026); AIMETA 2019; ANCRiSST 2019; EURODYN 2017; ENOC 2011"
+  - when: "2025"
+    what: "Technical committee member"
+    where: "ICACM 2025 and MMIE 2025"
+
+awards:
+  - when: "2018"
+    what: "Elected Member"
+    where: "International Society for the Interaction of Mechanics and Mathematics (ISIMM)"
+  - when: "2017"
+    what: "FFABR award"
+    where: "Italian Ministry of University and Research, national funding for basic research"
+  - when: "2012"
+    what: "Sapienza Doctoral Award"
+    where: "Best PhD dissertation in Engineering"
+  - when: "2006"
+    what: "Ceradini PhD Fellowship"
+    where: "Department of Structural and Geotechnical Engineering, Sapienza University of Rome"
+  - when: "2005"
+    what: "International Internship Award"
+    where: "Tohoku University, Japan (21st Century COE Program)"
+
+patents:
+  - when: "2024"
+    what: "European patent application EP 24203500.4"
+    where: "“Methods and devices for determining the stress response of a viscoelastic material” (priority date 30 September 2024)"
+
+memberships:
+  - when: "2018 – present"
+    what: "ISIMM"
+    where: "International Society for the Interaction of Mechanics and Mathematics"
+  - when: "2010 – present"
+    what: "EUROMECH"
+    where: "European Mechanics Society"
+  - when: "2007 – present"
+    what: "GNFM"
+    where: "Gruppo Nazionale per la Fisica Matematica, continuum mechanics section"
+  - when: "2017 – 2021"
+    what: "SISCo"
+    where: "Società Italiana di Scienza delle Costruzioni"

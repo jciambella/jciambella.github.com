@@ -1,0 +1,42 @@
+---
+layout: default
+title: Group
+description: PhD students and alumni supervised by Jacopo Ciambella at Sapienza University of Rome and the University of Bristol.
+permalink: /group/
+---
+{%- assign g = site.data.people -%}
+<header class="page-head">
+  <h1>Group</h1>
+  <p class="lede">
+    PhD students and alumni. Students interested in a BSc, MSc or PhD thesis on these
+    topics are welcome to <a href="mailto:{{ site.profile.email }}">get in touch</a>.
+  </p>
+</header>
+
+<section class="block" aria-labelledby="h-current">
+  <div class="block-head"><h2 id="h-current">Current PhD students</h2></div>
+  <ul class="people">
+    {%- for m in g.current %}
+    <li><span class="name">{{ m.name }}</span><span class="where">{{ m.role }}</span>{% if m.topic %}<span class="topic">{{ m.topic }}</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="block" aria-labelledby="h-alumni">
+  <div class="block-head"><h2 id="h-alumni">PhD alumni</h2></div>
+  <ul class="people">
+    {%- for m in g.alumni %}
+    <li><span class="name">{{ m.name }}</span><span class="where">{{ m.role }}</span>{% if m.topic %}<span class="topic">{{ m.topic }}</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="block" aria-labelledby="h-co">
+  <div class="block-head"><h2 id="h-co">Co-supervised PhDs</h2></div>
+  <ul class="people">
+    {%- for m in g.cosupervised %}
+    <li><span class="name">{{ m.name }}</span><span class="where">{{ m.role }}</span>{% if m.topic %}<span class="topic">{{ m.topic }}</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  <p class="muted">{{ g.theses }}</p>
+</section>

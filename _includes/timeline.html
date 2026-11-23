@@ -1,0 +1,8 @@
+<dl class="timeline">
+  {%- for e in include.items %}
+  <div class="row">
+    <dt>{{ e.when }}</dt>
+    <dd><span class="what">{{ e.what }}</span>{% if e.where %}<span class="where">{{ e.where }}</span>{% endif %}</dd>
+  </div>
+  {%- endfor %}
+</dl>

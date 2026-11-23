@@ -1,0 +1,31 @@
+# Research group. `topic` is optional.
+
+current:
+  - name: "S. Domesi"
+    role: "PhD candidate (expected 2027)"
+    topic: "Neural viscoelastic models of carbon-black-filled rubber"
+
+alumni:
+  - name: "F. Califano"
+    role: "PhD 2025"
+    topic: "Neural and finite-strain viscoelastic and viscoplastic models"
+  - name: "N. Stortini"
+    role: "PhD 2024"
+    topic: "Phase-field fracture of elastomers"
+  - name: "C.A. Nonato Da Silva"
+    role: "PhD 2018"
+    topic: "Fibre-reinforced cementitious composites"
+  - name: "D.C. Stanier"
+    role: "PhD 2016, University of Bristol"
+    topic: "Short-fibre and nanoplatelet-reinforced elastomers for magnetic actuation"
+
+cosupervised:
+  - name: "M. Ruggieri"
+    role: "PhD 2022, Università Roma Tre"
+    topic: "Magneto-viscoelastic laminates"
+  - name: "E. Eckstein"
+    role: "PhD 2016, University of Bristol (with P.M. Weaver)"
+  - name: "S. White"
+    role: "PhD 2016, University of Bristol (with P.M. Weaver)"
+
+theses: "More than 30 BSc and MSc theses supervised."

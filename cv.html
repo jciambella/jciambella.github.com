@@ -1,0 +1,78 @@
+---
+layout: default
+title: CV
+description: Curriculum vitae of Jacopo Ciambella, Associate Professor of Solid and Structural Mechanics at Sapienza University of Rome.
+permalink: /cv/
+---
+{%- assign cv = site.data.cv -%}
+<header class="page-head">
+  <h1>Curriculum vitae</h1>
+  {%- if site.profile.cv_pdf != "" %}
+  <p class="lede"><a href="{{ site.profile.cv_pdf | relative_url }}">Download the full CV (PDF)</a></p>
+  {%- endif %}
+</header>
+
+<section class="block" aria-labelledby="h-bio">
+  <div class="block-head"><h2 id="h-bio">Short bio</h2></div>
+  <p class="prose">{{ cv.bio }}</p>
+</section>
+
+<section class="block" aria-labelledby="h-pos">
+  <div class="block-head"><h2 id="h-pos">Positions</h2></div>
+  {% include timeline.html items=cv.positions %}
+</section>
+
+<section class="block" aria-labelledby="h-edu">
+  <div class="block-head"><h2 id="h-edu">Education and qualifications</h2></div>
+  {% include timeline.html items=cv.education %}
+</section>
+
+<section class="block" aria-labelledby="h-vis">
+  <div class="block-head"><h2 id="h-vis">Visiting appointments</h2></div>
+  {% include timeline.html items=cv.visiting %}
+</section>
+
+<section class="block" aria-labelledby="h-ed">
+  <div class="block-head"><h2 id="h-ed">Editorial activity</h2></div>
+  {% include timeline.html items=cv.editorial %}
+</section>
+
+<section class="block" id="talks" aria-labelledby="h-talks">
+  <div class="block-head"><h2 id="h-talks">Invited lectures and seminars</h2></div>
+  <dl class="timeline">
+    {%- for t in site.data.talks %}
+    <div class="row">
+      <dt>{{ t.year }}</dt>
+      <dd>
+        <span class="what">{% if t.title %}{{ t.title }}{% else %}{{ t.kind }}{% endif %}</span>
+        <span class="where">{% if t.title %}{{ t.kind }} · {% endif %}{{ t.event }}, {{ t.place }}</span>
+      </dd>
+    </div>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section class="block" aria-labelledby="h-awards">
+  <div class="block-head"><h2 id="h-awards">Awards</h2></div>
+  {% include timeline.html items=cv.awards %}
+</section>
+
+<section class="block" aria-labelledby="h-pat">
+  <div class="block-head"><h2 id="h-pat">Patents</h2></div>
+  {% include timeline.html items=cv.patents %}
+</section>
+
+<section class="block" aria-labelledby="h-svc">
+  <div class="block-head"><h2 id="h-svc">Academic service</h2></div>
+  {% include timeline.html items=cv.service %}
+</section>
+
+<section class="block" aria-labelledby="h-org">
+  <div class="block-head"><h2 id="h-org">Conference organisation</h2></div>
+  {% include timeline.html items=cv.organisation %}
+</section>
+
+<section class="block" aria-labelledby="h-mem">
+  <div class="block-head"><h2 id="h-mem">Memberships</h2></div>
+  {% include timeline.html items=cv.memberships %}
+</section>

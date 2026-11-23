@@ -1,0 +1,9 @@
+# Public code shown on the Research page.
+
+- name: "stretch_reversal_paper"
+  url: "https://github.com/jciambella/stretch_reversal_paper"
+  text: "Code reproducing the figures and Table 1 of “Stable stretch reversal in the biaxial tension of isotropic hyperelastic membranes” (manuscript submitted to Proc. R. Soc. A)."
+
+- name: "JRef"
+  url: "https://github.com/jciambella/JRef"
+  text: "A local, file-first reference manager for people who write papers in LaTeX, with per-project BibTeX files and a desktop and Android app."

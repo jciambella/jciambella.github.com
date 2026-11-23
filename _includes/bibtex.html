@@ -1,0 +1,44 @@
+{%- assign p = include.p -%}
+{%- assign fa = p.authors | first | split: ", " | first | downcase | remove: " " | remove: "'" -%}
+{%- assign words = p.title | downcase | replace: "–", " " | replace: "-", " " | split: " " -%}
+{%- assign kw = "" -%}
+{%- for w in words -%}
+  {%- assign wc = w | remove: ":" | remove: "," | remove: "(" | remove: ")" | remove: "'" | remove: "’" | remove: "." -%}
+  {%- if kw == "" and wc.size > 3 -%}
+    {%- unless "with,from,into,through,based,using,their,some" contains wc -%}{%- assign kw = wc -%}{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- case p.type -%}
+  {%- when "journal" -%}{%- assign et = "article" -%}
+  {%- when "conference" -%}{%- assign et = "inproceedings" -%}
+  {%- else -%}{%- assign et = "book" -%}
+{%- endcase -%}
+{%- if p.key -%}{%- assign key = p.key -%}{%- else -%}{%- capture key -%}{{ fa }}{{ p.year }}{{ kw }}{%- endcapture -%}{%- endif -%}
+@{{ et }}{ {{- key -}},
+  author    = { {{- p.authors | join: " and " | escape -}} },
+  title     = { {{- p.title | escape -}} },
+{%- if p.type == "journal" %}
+  journal   = { {{- p.venue | escape -}} },
+{%- elsif p.type == "conference" %}
+  booktitle = { {{- p.venue | escape -}} },
+{%- endif %}
+{%- if p.publisher %}
+  publisher = { {{- p.publisher | escape -}} },
+{%- endif %}
+{%- if p.volume %}
+  volume    = { {{- p.volume -}} },
+{%- endif %}
+{%- if p.issue %}
+  number    = { {{- p.issue | replace: "–", "--" -}} },
+{%- endif %}
+{%- if p.pages %}
+  pages     = { {{- p.pages | replace: "–", "--" -}} },
+{%- endif %}
+  year      = { {{- p.year -}} },
+{%- if p.isbn %}
+  isbn      = { {{- p.isbn -}} },
+{%- endif %}
+{%- if p.doi %}
+  doi       = { {{- p.doi -}} },
+{%- endif %}
+}

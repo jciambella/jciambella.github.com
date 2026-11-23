@@ -1,0 +1,19 @@
+# Highlights on the home page, newest first. `text` accepts Markdown.
+
+- date: "2026"
+  text: "Keynote at the *Advances in Applied Mechanics Conference 2026* in Gran Canaria: **Deep rheological springs and dashpots for data-driven modeling of soft materials**."
+
+- date: "2026"
+  text: "Joined the Editorial Board of *Scientific Reports* and became Associate Editor of *Frontiers in Materials*."
+
+- date: "2026"
+  text: "The **Deep Rheological Element**, a neural network inside a thermodynamically consistent rheological model, is out in *Mechanics of Materials*."
+
+- date: "2025"
+  text: "New project with **Leonardo S.p.A.** on magnetorheological elastomers for vibration damping and digital twins of commercial dampers."
+
+- date: "2025"
+  text: "F. Califano completed the PhD on neural and finite-strain viscoelastic models."
+
+- date: "2024"
+  text: "European patent application EP 24203500.4: *Methods and devices for determining the stress response of a viscoelastic material*."

@@ -1,0 +1,58 @@
+---
+layout: default
+title: Publications
+description: >-
+  Complete list of publications of Jacopo Ciambella: journal articles, conference
+  papers and books on nonlinear viscoelasticity, neural constitutive models, fracture
+  of elastomers, magneto-active materials and structural identification.
+permalink: /publications/
+scripts: [/assets/js/publications.js]
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign nj = pubs | where: "type", "journal" | size -%}
+{%- assign nc = pubs | where: "type", "conference" | size -%}
+{%- assign nb = pubs | where: "type", "book" | size -%}
+<header class="page-head">
+  <h1>Publications</h1>
+  <p class="lede">
+    {{ nj }} journal articles, {{ nc }} conference papers and {{ nb }} book{% if nb != 1 %}s{% endif %}.
+    {%- if site.profile.scholar != "" or site.profile.orcid != "" %}
+    Also on
+    {% if site.profile.scholar != "" %}<a href="https://scholar.google.com/citations?user={{ site.profile.scholar }}">Google Scholar</a>{% if site.profile.orcid != "" %} and {% endif %}{% endif -%}
+    {%- if site.profile.orcid != "" %}<a href="https://orcid.org/{{ site.profile.orcid }}">ORCID</a>{% endif %}.
+    {%- endif %}
+  </p>
+</header>
+
+<div class="pub-tools" hidden>
+  <div class="seg" role="group" aria-label="Type">
+    <button type="button" data-type="all" aria-pressed="true">All</button>
+    <button type="button" data-type="selected" aria-pressed="false">Selected</button>
+    <button type="button" data-type="journal" aria-pressed="false">Journal</button>
+    <button type="button" data-type="conference" aria-pressed="false">Conference</button>
+    <button type="button" data-type="book" aria-pressed="false">Book</button>
+  </div>
+  <label class="visually-hidden" for="pub-topic">Topic</label>
+  <select id="pub-topic">
+    <option value="">All topics</option>
+    {%- for t in site.data.topics %}
+    <option value="{{ t.key }}">{{ t.title }}</option>
+    {%- endfor %}
+  </select>
+  <label class="visually-hidden" for="pub-q">Search publications</label>
+  <input id="pub-q" type="search" placeholder="Search title, author, journal…" autocomplete="off">
+  <p class="pub-count" aria-live="polite"></p>
+</div>
+
+{%- assign by_year = pubs | group_by: "year" %}
+{%- for g in by_year %}
+<section class="year-group" aria-label="{{ g.name }}">
+  <h2 class="year">{{ g.name }}</h2>
+  <ol class="pubs">
+    {%- for pub in g.items %}
+    {% include pub.html p=pub %}
+    {%- endfor %}
+  </ol>
+</section>
+{%- endfor %}
+<p class="no-results" hidden>No publications match these filters.</p>

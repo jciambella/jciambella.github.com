@@ -1,0 +1,28 @@
+{%- assign p = site.profile -%}
+<ul class="links">
+  <li><a href="mailto:{{ p.email }}">{% include icon.html name="mail" %}Email</a></li>
+  {%- if p.orcid != "" %}
+  <li><a href="https://orcid.org/{{ p.orcid }}" rel="me">{% include icon.html name="orcid" %}ORCID</a></li>
+  {%- endif %}
+  {%- if p.scholar != "" %}
+  <li><a href="https://scholar.google.com/citations?user={{ p.scholar }}" rel="me">{% include icon.html name="scholar" %}Google Scholar</a></li>
+  {%- endif %}
+  {%- if p.scopus != "" %}
+  <li><a href="https://www.scopus.com/authid/detail.uri?authorId={{ p.scopus }}" rel="me">{% include icon.html name="link" %}Scopus</a></li>
+  {%- endif %}
+  {%- if p.researchgate != "" %}
+  <li><a href="https://www.researchgate.net/profile/{{ p.researchgate }}" rel="me">{% include icon.html name="link" %}ResearchGate</a></li>
+  {%- endif %}
+  {%- if p.linkedin != "" %}
+  <li><a href="https://www.linkedin.com/in/{{ p.linkedin }}" rel="me">{% include icon.html name="link" %}LinkedIn</a></li>
+  {%- endif %}
+  {%- if p.github != "" %}
+  <li><a href="https://github.com/{{ p.github }}" rel="me">{% include icon.html name="github" %}GitHub</a></li>
+  {%- endif %}
+  {%- if p.institutional != "" %}
+  <li><a href="{{ p.institutional }}">{% include icon.html name="building" %}Sapienza page</a></li>
+  {%- endif %}
+  {%- if p.cv_pdf != "" %}
+  <li><a href="{{ p.cv_pdf | relative_url }}">{% include icon.html name="cv" %}CV (PDF)</a></li>
+  {%- endif %}
+</ul>

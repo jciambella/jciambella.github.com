@@ -1,0 +1,5 @@
+{%- for a in include.authors -%}
+{%- assign parts = a | split: ", " -%}
+<span itemprop="author">{% if a == site.profile.bib_name %}<strong class="me">{{ parts[1] }} {{ parts[0] }}</strong>{% else %}{{ parts[1] }} {{ parts[0] }}{% endif %}</span>
+{%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}

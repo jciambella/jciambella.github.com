@@ -1,0 +1,88 @@
+---
+layout: default
+jsonld: true
+---
+{%- assign p = site.profile -%}
+<section class="hero">
+  <div class="portrait">
+    {%- if p.photo != "" %}
+    <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="220" height="220">
+    {%- else %}
+    <div class="monogram" aria-hidden="true">{{ p.initials }}</div>
+    {%- endif %}
+  </div>
+  <div class="intro">
+    <p class="eyebrow"><a href="{{ p.university_url }}">{{ p.university }}</a></p>
+    <h1>{{ p.name }}</h1>
+    <p class="role">{{ p.position }}<br>{{ p.department }}</p>
+    <p class="bio">
+      I study the mechanics of soft dissipative solids at large strains (elastomers, filled
+      rubber, soft biological and magneto-active materials) by combining continuum
+      thermodynamics, mechanical testing and computation. My recent work embeds neural
+      networks inside thermodynamically admissible rheological models, implemented in an
+      open-source finite-element framework built on FEniCSx, and develops viscoelastic
+      phase-field models of rate-dependent fracture in elastomers. I work closely with
+      industry, including Bridgestone and Leonardo.
+    </p>
+    {% include profile-links.html %}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-themes">
+  <div class="block-head">
+    <h2 id="h-themes">Research</h2>
+    <a class="more" href="{{ '/research/' | relative_url }}">All research {% include icon.html name="arrow" %}</a>
+  </div>
+  <ul class="themes">
+    {%- for t in site.data.topics %}
+    <li class="theme">
+      <a href="{{ '/research/' | relative_url }}#{{ t.key }}">
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.short }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<div class="split">
+  <section class="block" aria-labelledby="h-latest">
+    <div class="block-head">
+      <h2 id="h-latest">Latest publications</h2>
+      <a class="more" href="{{ '/publications/' | relative_url }}">All {{ site.data.publications.size }} {% include icon.html name="arrow" %}</a>
+    </div>
+    {%- assign latest = site.data.publications | where: "type", "journal" %}
+    <ol class="pubs compact">
+      {%- for pub in latest limit: 5 %}
+      {% include pub.html p=pub %}
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <aside class="side">
+    <section class="block" aria-labelledby="h-news">
+      <div class="block-head"><h2 id="h-news">Highlights</h2></div>
+      <ul class="news">
+        {%- for n in site.data.news %}
+        <li><span class="date">{{ n.date }}</span><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="block" aria-labelledby="h-talks">
+      <div class="block-head">
+        <h2 id="h-talks">Recent talks</h2>
+        <a class="more" href="{{ '/cv/' | relative_url }}#talks">All {% include icon.html name="arrow" %}</a>
+      </div>
+      <ul class="talks">
+        {%- for t in site.data.talks limit: 3 %}
+        <li>
+          <span class="date">{{ t.year }} · {{ t.kind }}</span>
+          {%- if t.title %}<span class="talk-title">{{ t.title }}</span>{% endif %}
+          <span class="talk-event">{{ t.event }}, {{ t.place }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+  </aside>
+</div>

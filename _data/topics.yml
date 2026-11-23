@@ -1,0 +1,63 @@
+# Research themes. Order here is the order on the Home and Research pages.
+# `key` is what publications list under `topics:`.
+
+- key: neural
+  title: "Physics-augmented neural constitutive models"
+  short: "Neural networks inside thermodynamically admissible rheological structures, implemented in finite elements."
+  body: >-
+    Neural networks are embedded within thermodynamically admissible rheological
+    structures, so that the learned model inherits frame indifference and a
+    non-negative dissipation by construction. The **Deep Rheological Element**
+    replaces classical springs and dashpots with learnable functions; a
+    **filler-conditioned quasi-linear viscoelastic (QLV)** model captures the
+    effect of carbon-black content in rubber. Both are implemented in an
+    open-source finite-element framework built on FEniCSx.
+
+- key: visco
+  title: "Finite viscoelasticity and viscoplasticity"
+  short: "Modelling, testing and identification of soft dissipative solids at large strains."
+  body: >-
+    Constitutive modelling, mechanical testing and parameter identification of
+    elastomers and filled rubber at finite strains: nonlinear integral-based
+    models, memory decay rates, fractional versus exponential kernels,
+    finite-strain viscoplasticity, and continuum models of granular materials
+    moving between inelastic flow and elastic jamming. Much of this work is
+    carried out with industry, including Bridgestone.
+
+- key: fracture
+  title: "Fracture of elastomers"
+  short: "Viscoelastic phase-field models of rate-dependent crack propagation."
+  body: >-
+    Phase-field descriptions of fracture coupled with finite viscoelasticity,
+    to predict how fast cracks run in elastomers, the transition from brittle
+    to pseudo-ductile failure, and fatigue-driven ablation of viscoelastic
+    elastomers.
+
+- key: fibres
+  title: "Anisotropic, fibre-reinforced and architected materials"
+  short: "Fibre reorientation, anisotropic visco-hyperelasticity, soft tissues, auxetics and composites."
+  body: >-
+    Structurally frame-indifferent visco-hyperelasticity of anisotropic solids,
+    non-affine deformation and reorientation of distributed fibres, viscous
+    remodelling of soft biological materials and cell–matrix adhesions,
+    nonlinear elasticity of auxetic foams, and short-fibre, nanoplatelet and
+    steel-fibre reinforced composites, including 3D-printed elements.
+
+- key: magneto
+  title: "Magneto-active soft materials"
+  short: "Magneto-elastic rods, actuators, laminates and magnetorheological elastomers."
+  body: >-
+    Theories of magneto-elastic rods and nanorods derived by rigorous dimension
+    reduction, form-finding of soft magneto-elastic actuators, magneto-induced
+    fibre remodelling, magneto-viscoelastic laminates, and magnetorheological
+    elastomers for vibration damping, developed with Leonardo S.p.A.
+
+- key: shm
+  title: "Structural identification and monitoring"
+  short: "Vibration-based damage identification, bridges and modern heritage structures."
+  body: >-
+    Vibration-based damage identification using modal curvatures and
+    image-based operational modal analysis; dynamic testing of high-speed
+    railway bridges; long-term monitoring of twentieth-century heritage
+    structures in Rome, including Pier Luigi Nervi's Palazzetto dello Sport and
+    the Flaminio Stadium.

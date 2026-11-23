@@ -1,0 +1,593 @@
+# Publications, newest first (the page groups them by year in this order).
+#
+# Fields
+#   type:     journal | conference | book
+#   authors:  "Surname, I." (the entry matching profile.bib_name in _config.yml is shown in bold)
+#   pages:    page range ("932–944") or article number ("105525")
+#   topics:   keys from _data/topics.yml; they drive the Research page and the topic filter
+#   selected: true puts the paper in the "Selected" filter
+#   doi:      without the https://doi.org/ prefix
+#   note:     optional free text, e.g. "In press"
+#   key:      optional BibTeX key; by default surname + year + first title word
+
+# ---------------------------------------------------------------- 2026
+- type: journal
+  year: 2026
+  title: "Enhancing nonlinear viscoelastic modeling of elastomers through neural networks: a deep rheological element"
+  authors: ["Califano, F.", "Ciambella, J."]
+  venue: "Mechanics of Materials"
+  volume: 212
+  pages: "105525"
+  topics: [neural, visco]
+  selected: true
+
+- type: journal
+  year: 2026
+  title: "A filler-conditioned neural quasi-linear viscoelastic (QLV) model for carbon-black-filled rubber"
+  authors: ["Califano, F.", "Ciambella, J.", "Domesi, S."]
+  venue: "Advances in Applied Mechanics"
+  doi: "10.1016/bs.aams.2026.08.005"
+  topics: [neural, visco]
+  selected: true
+
+- type: journal
+  year: 2026
+  title: "Viscoelastic dynamics of cell–matrix adhesions: insights from a one-dimensional perspective"
+  authors: ["Ciambella, J.", "Lucci, G.", "Nardinocchi, P."]
+  venue: "Applied Mathematical Modelling"
+  volume: 152
+  pages: "116525"
+  topics: [fibres, visco]
+
+- type: conference
+  year: 2026
+  title: "An open-source finite-element implementation of the Deep Rheological Element for large-strain nonlinear viscoelastic behavior of elastomers"
+  authors: ["Califano, F.", "Ciambella, J.", "Domesi, S."]
+  venue: "Constitutive Models for Rubber XIV"
+  pages: "305–309"
+  topics: [neural, visco]
+
+- type: conference
+  year: 2026
+  title: "Nonlinear viscoelasticity of anisotropic soft materials with distributed fibres: a numerical study"
+  authors: ["Lucci, G.", "Ciambella, J.", "Nardinocchi, P."]
+  venue: "Lecture Notes in Mechanical Engineering"
+  publisher: "Springer"
+  pages: "537–546"
+  topics: [fibres, visco]
+
+# ---------------------------------------------------------------- 2025
+- type: journal
+  year: 2025
+  title: "A finite viscoelastic phase-field model for prediction of crack propagation speed in elastomers"
+  authors: ["Ciambella, J.", "Lancioni, G.", "Stortini, N."]
+  venue: "European Journal of Mechanics – A/Solids"
+  volume: 113
+  pages: "105678"
+  doi: "10.1016/j.euromechsol.2025.105678"
+  topics: [fracture, visco]
+  selected: true
+
+- type: journal
+  year: 2025
+  title: "Magneto-viscoelastic laminates in finite shear"
+  authors: ["Ruggieri, M.", "Ciambella, J.", "Tomassetti, G.", "Rudykh, S."]
+  venue: "International Journal of Non-Linear Mechanics"
+  volume: 175
+  pages: "105085"
+  doi: "10.1016/j.ijnonlinmec.2025.105085"
+  topics: [magneto, visco]
+
+# ---------------------------------------------------------------- 2024
+- type: journal
+  year: 2024
+  title: "A continuum model for granular materials exhibiting a smooth transition between inelastic flow and elastic jamming"
+  authors: ["Rubin, M.B.", "Ciambella, J.", "Nadler, B."]
+  venue: "International Journal of Mechanical Sciences"
+  volume: 277
+  pages: "109391"
+  doi: "10.1016/j.ijmecsci.2024.109391"
+  topics: [visco]
+
+- type: journal
+  year: 2024
+  title: "Anisotropic evolution of viscous strain in soft biological materials"
+  authors: ["Ciambella, J.", "Lucci, G.", "Nardinocchi, P."]
+  venue: "Mechanics of Materials"
+  volume: 192
+  pages: "104976"
+  doi: "10.1016/j.mechmat.2024.104976"
+  topics: [fibres, visco]
+
+- type: journal
+  year: 2024
+  title: "The Pier Luigi Nervi's concrete structure of Palazzetto dello Sport: modeling and dynamic characterization"
+  authors: ["Ciambella, J.", "Ranzi, G.", "Romeo, F."]
+  venue: "Structural Concrete"
+  doi: "10.1002/suco.202400320"
+  topics: [shm]
+
+- type: journal
+  year: 2024
+  title: "Dynamic testing and modeling of span interaction in high-speed railway girder bridges"
+  authors: ["Di Re, P.", "Lofrano, E.", "Ciambella, J.", "Paolone, A."]
+  venue: "Measurement"
+  volume: 226
+  pages: "114078"
+  doi: "10.1016/j.measurement.2023.114078"
+  topics: [shm]
+
+- type: conference
+  year: 2024
+  title: "Long-term vibrational monitoring of the Exedra of Marcus Aurelius' Hall"
+  authors: ["Rinaldi, C.", "Crognale, M.", "Ciambella, J.", "Potenza, F.", "Gattulli, V."]
+  venue: "Lecture Notes in Civil Engineering"
+  volume: 514
+  pages: "130–137"
+  doi: "10.1007/978-3-031-61421-7_13"
+  topics: [shm]
+
+- type: conference
+  year: 2024
+  title: "Dynamic characterization of a modern heritage structure: the Palazzetto dello Sport by Pier Luigi Nervi"
+  authors: ["Ciambella, J.", "Ranzi, G.", "Romeo, F."]
+  venue: "Journal of Physics: Conference Series"
+  volume: 2647
+  issue: 22
+  pages: "222006"
+  doi: "10.1088/1742-6596/2647/22/222006"
+  topics: [shm]
+
+- type: conference
+  year: 2024
+  title: "Dynamic testing and modeling of span interaction in high-speed railway girder bridges"
+  authors: ["Di Re, P.", "Ciambella, J.", "Lofrano, E.", "Paolone, A."]
+  key: "dire2024dynamicproc"
+  venue: "Procedia Structural Integrity"
+  volume: 62
+  pages: "781–788"
+  doi: "10.1016/j.prostr.2024.09.106"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2023
+- type: journal
+  year: 2023
+  title: "Viscoplastic simple shear at finite strains"
+  authors: ["Califano, F.", "Ciambella, J."]
+  venue: "Proceedings of the Royal Society A"
+  volume: 479
+  issue: 2280
+  pages: "20230603"
+  doi: "10.1098/rspa.2023.0603"
+  topics: [visco]
+  selected: true
+
+- type: journal
+  year: 2023
+  title: "An elastic–viscoplastic model with non-affine deformation and rotation of a distribution of embedded fibres"
+  authors: ["Ciambella, J.", "Rubin, M.B."]
+  venue: "European Journal of Mechanics – A/Solids"
+  volume: 100
+  pages: "104985"
+  doi: "10.1016/j.euromechsol.2023.104985"
+  topics: [fibres, visco]
+  selected: true
+
+- type: journal
+  year: 2023
+  title: "Non-affine fiber reorientation in finite inelasticity"
+  authors: ["Ciambella, J.", "Nardinocchi, P."]
+  venue: "Journal of Elasticity"
+  volume: 153
+  issue: "4–5"
+  pages: "735–753"
+  doi: "10.1007/s10659-022-09945-w"
+  topics: [fibres]
+
+- type: conference
+  year: 2023
+  title: "The role of curvatures in damage identification"
+  authors: ["Vestroni, F.", "Pau, A.", "Ciambella, J."]
+  venue: "Bridge Safety, Maintenance, Management, Life-Cycle, Resilience and Sustainability (IABMAS 2022)"
+  pages: "1438–1445"
+  doi: "10.1201/9781003322641-175"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2022
+- type: journal
+  year: 2022
+  title: "An Ogden-like formulation incorporating phase-field fracture in elastomers: from brittle to pseudo-ductile failures"
+  authors: ["Ciambella, J.", "Lancioni, G.", "Stortini, N."]
+  venue: "Philosophical Transactions of the Royal Society A"
+  volume: 380
+  issue: 2234
+  pages: "20210323"
+  doi: "10.1098/rsta.2021.0323"
+  topics: [fracture]
+  selected: true
+
+- type: journal
+  year: 2022
+  title: "Passive and active fiber reorientation in anisotropic materials"
+  authors: ["Ciambella, J.", "Lucci, G.", "Nardinocchi, P.", "Preziosi, L."]
+  venue: "International Journal of Engineering Science"
+  volume: 176
+  pages: "103688"
+  doi: "10.1016/j.ijengsci.2022.103688"
+  topics: [fibres]
+
+- type: journal
+  year: 2022
+  title: "A theory of magneto-elastic nanorods obtained through rigorous dimension reduction"
+  authors: ["Ciambella, J.", "Kružík, M.", "Tomassetti, G."]
+  venue: "Applied Mathematical Modelling"
+  volume: 106
+  pages: "426–447"
+  doi: "10.1016/j.apm.2022.01.028"
+  topics: [magneto]
+
+- type: journal
+  year: 2022
+  title: "Image-based operational modal analysis and damage detection validated in an instrumented small-scale steel frame structure"
+  authors: ["Rinaldi, C.", "Ciambella, J.", "Gattulli, V."]
+  venue: "Mechanical Systems and Signal Processing"
+  volume: 168
+  pages: "108640"
+  doi: "10.1016/j.ymssp.2021.108640"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2021
+- type: journal
+  year: 2021
+  title: "A structurally frame-indifferent model for anisotropic visco-hyperelastic materials"
+  authors: ["Ciambella, J.", "Nardinocchi, P."]
+  venue: "Journal of the Mechanics and Physics of Solids"
+  volume: 147
+  pages: "104247"
+  doi: "10.1016/j.jmps.2020.104247"
+  topics: [fibres, visco]
+  selected: true
+
+- type: journal
+  year: 2021
+  title: "Structural analysis and health monitoring of twentieth-century cultural heritage: the Flaminio Stadium in Rome"
+  authors: ["Di Re, P.", "Lofrano, E.", "Ciambella, J.", "Romeo, F."]
+  venue: "Smart Structures and Systems"
+  volume: 27
+  issue: 2
+  pages: "285–303"
+  doi: "10.12989/sss.2021.27.2.285"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2020
+- type: journal
+  year: 2020
+  title: "A form-finding strategy for magneto-elastic actuators"
+  authors: ["Ciambella, J.", "Tomassetti, G."]
+  venue: "International Journal of Non-Linear Mechanics"
+  volume: 119
+  pages: "103297"
+  doi: "10.1016/j.ijnonlinmec.2019.103297"
+  topics: [magneto]
+
+- type: journal
+  year: 2020
+  title: "A multiscale model for optimizing the flexural capacity of FRC structural elements"
+  authors: ["Nonato Da Silva, C.A.", "Ciambella, J.", "Barros, J.A.O.", "dos Santos Valente, T.D.", "Costa, I.G."]
+  venue: "Composites Part B: Engineering"
+  volume: 200
+  pages: "108325"
+  doi: "10.1016/j.compositesb.2020.108325"
+  topics: [fibres]
+
+- type: journal
+  year: 2020
+  title: "A model for optimizing hooked end steel fibre reinforcements in cracked cement composites"
+  authors: ["Nonato Da Silva, C.A.", "Ciambella, J.", "Barros, J.A.O.", "Costa, I.G."]
+  venue: "Applications in Engineering Science"
+  volume: 3
+  pages: "100011"
+  doi: "10.1016/j.apples.2020.100011"
+  topics: [fibres]
+
+# ---------------------------------------------------------------- 2019
+- type: journal
+  year: 2019
+  title: "Torque-induced reorientation in active fibre-reinforced materials"
+  authors: ["Ciambella, J.", "Nardinocchi, P."]
+  venue: "Soft Matter"
+  volume: 15
+  issue: 9
+  pages: "2081–2091"
+  doi: "10.1039/c8sm02346h"
+  topics: [magneto, fibres]
+  selected: true
+
+- type: journal
+  year: 2019
+  title: "Magneto-induced remodelling of fibre-reinforced elastomers"
+  authors: ["Ciambella, J.", "Nardinocchi, P."]
+  venue: "International Journal of Non-Linear Mechanics"
+  volume: 117
+  pages: "103230"
+  doi: "10.1016/j.ijnonlinmec.2019.07.015"
+  topics: [magneto, fibres]
+
+- type: journal
+  year: 2019
+  title: "Analytical bond model for general type of reinforcements of finite embedment length in cracked cement based materials"
+  authors: ["Nonato Da Silva, C.A.", "Ciambella, J.", "Barros, J.A.O.", "Costa, I.G."]
+  venue: "International Journal of Solids and Structures"
+  volume: 167
+  pages: "36–47"
+  doi: "10.1016/j.ijsolstr.2019.02.018"
+  topics: [fibres]
+
+- type: journal
+  year: 2019
+  title: "Modal curvature-based damage localization in weakly damaged continuous beams"
+  authors: ["Ciambella, J.", "Pau, A.", "Vestroni, F."]
+  venue: "Mechanical Systems and Signal Processing"
+  volume: 121
+  pages: "171–182"
+  doi: "10.1016/j.ymssp.2018.11.012"
+  topics: [shm]
+
+- type: conference
+  year: 2019
+  title: "The use of different modal quantities for damage identification"
+  authors: ["Vestroni, F.", "Ciambella, J.", "Pau, A."]
+  venue: "9th ECCOMAS Thematic Conference on Smart Structures and Materials (SMART 2019)"
+  pages: "275–283"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2018
+- type: journal
+  year: 2018
+  title: "A nonlinear theory for fibre-reinforced magneto-elastic rods"
+  authors: ["Ciambella, J.", "Favata, A.", "Tomassetti, G."]
+  venue: "Proceedings of the Royal Society A"
+  volume: 474
+  issue: 2209
+  pages: "20170703"
+  doi: "10.1098/rspa.2017.0703"
+  topics: [magneto]
+  selected: true
+
+- type: conference
+  year: 2018
+  title: "Modelling of CFRP laminates applied according to the ETS/NSM technique"
+  authors: ["Nonato Da Silva, C.A.", "Ciambella, J.", "Barros, J.A.O.", "Costa, I.G."]
+  venue: "9th International Conference on Fibre-Reinforced Polymer (FRP) Composites in Civil Engineering (CICE 2018)"
+  pages: "653–661"
+  topics: [fibres]
+
+# ---------------------------------------------------------------- 2017
+- type: journal
+  year: 2017
+  title: "Damage evolution and debonding in hybrid laminates with a cohesive interfacial law"
+  authors: ["Alessi, R.", "Ciambella, J.", "Paolone, A."]
+  venue: "Meccanica"
+  volume: 52
+  issue: "4–5"
+  pages: "1079–1091"
+  doi: "10.1007/s11012-016-0437-8"
+  topics: [fracture, fibres]
+
+- type: conference
+  year: 2017
+  title: "Experimental results in damping evaluation of a high-speed railway bridge"
+  authors: ["Brunetti, M.", "Ciambella, J.", "Evangelista, L.", "Lofrano, E.", "Paolone, A.", "Vittozzi, A."]
+  venue: "Procedia Engineering"
+  volume: 199
+  pages: "3015–3020"
+  doi: "10.1016/j.proeng.2017.09.402"
+  topics: [shm]
+
+- type: conference
+  year: 2017
+  title: "Effective filtering of modal curvatures for damage identification in beams"
+  authors: ["Ciambella, J.", "Pau, A.", "Vestroni, F."]
+  venue: "Procedia Engineering"
+  volume: 199
+  pages: "1876–1881"
+  doi: "10.1016/j.proeng.2017.09.119"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2016
+- type: journal
+  year: 2016
+  title: "Damage identification in a parabolic arch by means of natural frequencies, modal shapes and curvatures"
+  authors: ["Capecchi, D.", "Ciambella, J.", "Pau, A.", "Vestroni, F."]
+  venue: "Meccanica"
+  volume: 51
+  issue: 11
+  pages: "2847–2859"
+  doi: "10.1007/s11012-016-0510-3"
+  topics: [shm]
+
+- type: journal
+  year: 2016
+  title: "Fabrication and characterisation of short fibre reinforced elastomer composites for bending and twisting magnetic actuation"
+  authors: ["Stanier, D.C.", "Ciambella, J.", "Rahatekar, S.S."]
+  venue: "Composites Part A: Applied Science and Manufacturing"
+  volume: 91
+  pages: "168–176"
+  doi: "10.1016/j.compositesa.2016.10.001"
+  topics: [magneto, fibres]
+
+# ---------------------------------------------------------------- 2015
+- type: journal
+  year: 2015
+  title: "The use of modal curvatures for damage localization in beam-type structures"
+  authors: ["Ciambella, J.", "Vestroni, F."]
+  venue: "Journal of Sound and Vibration"
+  volume: 340
+  pages: "126–137"
+  doi: "10.1016/j.jsv.2014.11.037"
+  topics: [shm]
+  selected: true
+
+- type: journal
+  year: 2015
+  title: "Nonlinear elasticity of auxetic open cell foams modeled as continuum solids"
+  authors: ["Ciambella, J.", "Bezazi, A.", "Saccomandi, G.", "Scarpa, F."]
+  venue: "Journal of Applied Physics"
+  volume: 117
+  issue: 18
+  pages: "184902"
+  doi: "10.1063/1.4921101"
+  topics: [fibres]
+
+- type: conference
+  year: 2015
+  title: "Magnetic response of aligned nickel coated carbon fibres in a PDMS matrix"
+  authors: ["Stanier, D.C.", "Rahatekar, S.S.", "Ciambella, J."]
+  venue: "Constitutive Models for Rubber IX"
+  pages: "181–188"
+  doi: "10.1201/b18701-34"
+  topics: [magneto, fibres]
+
+# ---------------------------------------------------------------- 2014
+- type: journal
+  year: 2014
+  title: "Identification of the viscoelastic properties of soft materials at low frequency: performance, ill-conditioning and extrapolation capabilities of fractional and exponential models"
+  authors: ["Ciambella, J.", "Paolone, A.", "Vidoli, S."]
+  venue: "Journal of the Mechanical Behavior of Biomedical Materials"
+  volume: 37
+  pages: "286–298"
+  doi: "10.1016/j.jmbbm.2014.05.031"
+  topics: [visco]
+
+- type: journal
+  year: 2014
+  title: "A continuum hyperelastic model for auxetic materials"
+  authors: ["Ciambella, J.", "Saccomandi, G."]
+  venue: "Proceedings of the Royal Society A"
+  volume: 470
+  issue: 2163
+  pages: "20130691"
+  doi: "10.1098/rspa.2013.0691"
+  topics: [fibres]
+  selected: true
+
+- type: journal
+  year: 2014
+  title: "The reinforcement effect of exfoliated graphene oxide nanoplatelets on the mechanical and viscoelastic properties of natural rubber"
+  authors: ["Stanier, D.C.", "Patil, A.J.", "Sriwong, C.", "Rahatekar, S.S.", "Ciambella, J."]
+  venue: "Composites Science and Technology"
+  volume: 95
+  pages: "59–66"
+  doi: "10.1016/j.compscitech.2014.02.007"
+  topics: [fibres, visco]
+
+- type: conference
+  year: 2014
+  title: "Orientation effects in short fibre-reinforced elastomers"
+  authors: ["Ciambella, J.", "Stanier, D.C."]
+  venue: "ASME International Mechanical Engineering Congress and Exposition (IMECE 2014)"
+  volume: 9
+  doi: "10.1115/IMECE2014-40430"
+  topics: [fibres]
+
+- type: conference
+  year: 2014
+  title: "Multiscale modelling nano-platelet reinforced composites at large strain"
+  authors: ["Stanier, D.C.", "Ciambella, J."]
+  venue: "16th European Conference on Composite Materials (ECCM 2014)"
+  topics: [fibres]
+
+# ---------------------------------------------------------------- 2013
+- type: book
+  year: 2013
+  title: "An introduction to nonlinear viscoelasticity of filled rubber: a continuum mechanics approach"
+  authors: ["Ciambella, J."]
+  venue: "Monograph"
+  publisher: "Sapienza Editrice"
+  isbn: "88-95814-78-9"
+  topics: [visco]
+
+- type: conference
+  year: 2013
+  title: "The reinforcement effects of graphene oxide nanoplatelets on the mechanical and viscoelastic properties of natural rubber"
+  authors: ["Stanier, D.C.", "Ciambella, J.", "Rahatekar, S.S.", "Patil, A.J.", "Mann, S."]
+  venue: "Constitutive Models for Rubber VIII"
+  pages: "553–558"
+  doi: "10.1201/b14964-100"
+  topics: [fibres, visco]
+
+# ---------------------------------------------------------------- 2011
+- type: journal
+  year: 2011
+  title: "Memory decay rates of viscoelastic solids: not too slow, but not too fast either"
+  authors: ["Ciambella, J.", "Paolone, A.", "Vidoli, S."]
+  venue: "Rheologica Acta"
+  volume: 50
+  issue: "7–8"
+  pages: "661–674"
+  doi: "10.1007/s00397-011-0549-y"
+  topics: [visco]
+
+- type: journal
+  year: 2011
+  title: "Damage observability, localization and assessment based on eigenfrequencies and eigenvectors curvatures"
+  authors: ["Ciambella, J.", "Vestroni, F.", "Vidoli, S."]
+  venue: "Smart Structures and Systems"
+  volume: 8
+  issue: 2
+  pages: "191–204"
+  doi: "10.12989/sss.2011.8.2.191"
+  topics: [shm]
+
+- type: conference
+  year: 2011
+  title: "Characterization and identification of the memory decay rates of carbon black-filled rubber"
+  authors: ["Ciambella, J.", "Paolone, A.", "Vidoli, S."]
+  venue: "Constitutive Models for Rubber VII"
+  pages: "93–98"
+  topics: [visco]
+
+# ---------------------------------------------------------------- 2010
+- type: journal
+  year: 2010
+  title: "A comparison of nonlinear integral-based viscoelastic models through compression tests on filled rubber"
+  authors: ["Ciambella, J.", "Paolone, A.", "Vidoli, S."]
+  venue: "Mechanics of Materials"
+  volume: 42
+  issue: 10
+  pages: "932–944"
+  doi: "10.1016/j.mechmat.2010.07.007"
+  topics: [visco]
+  selected: true
+
+- type: conference
+  year: 2010
+  title: "A combined eigenfrequencies–eigenvectors curvatures technique for damage detection"
+  authors: ["Ciambella, J.", "Vestroni, F.", "Vidoli, S."]
+  venue: "5th European Workshop on Structural Health Monitoring"
+  pages: "1051–1056"
+  topics: [shm]
+
+# ---------------------------------------------------------------- 2009
+- type: journal
+  year: 2009
+  title: "On the ABAQUS FEA model of finite viscoelasticity"
+  authors: ["Ciambella, J.", "Destrade, M.", "Ogden, R.W."]
+  venue: "Rubber Chemistry and Technology"
+  volume: 82
+  issue: 2
+  pages: "184–193"
+  doi: "10.5254/1.3548243"
+  topics: [visco]
+  selected: true
+
+# ---------------------------------------------------------------- 2008
+- type: conference
+  year: 2008
+  title: "Damage detection with auxiliary subsystem"
+  authors: ["Vestroni, F.", "Ciambella, J.", "dell'Isola, F.", "Vidoli, S."]
+  venue: "Advances in Science and Technology (CIMTEC 2008)"
+  volume: 56
+  pages: "401–413"
+  doi: "10.4028/www.scientific.net/AST.56.401"
+  topics: [shm]

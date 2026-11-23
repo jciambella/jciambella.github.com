@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+  {%- if site.profile.orcid != "" %}
+  <link rel="me" href="https://orcid.org/{{ site.profile.orcid }}">
+  {%- endif %}
+  {%- if page.jsonld %}
+  {% include person-jsonld.html %}
+  {%- endif %}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.profile.name }}</a>
+      <nav aria-label="Main">
+        <ul>
+          {%- for item in site.nav %}
+          {%- assign active = false %}
+          {%- if page.url == item.url %}{% assign active = true %}{% endif %}
+          <li><a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <address>
+        {%- for line in site.profile.address %}{{ line }}<br>{% endfor -%}
+        <a href="mailto:{{ site.profile.email }}">{{ site.profile.email }}</a>
+      </address>
+      <p class="small">
+        © {{ site.time | date: "%Y" }} {{ site.profile.name }} · Updated {{ site.time | date: "%B %Y" }}
+      </p>
+    </div>
+  </footer>
+  {%- if page.scripts %}
+  {%- for s in page.scripts %}
+  <script src="{{ s | relative_url }}" defer></script>
+  {%- endfor %}
+  {%- endif %}
+</body>
+</html>

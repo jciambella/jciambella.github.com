@@ -1,0 +1,78 @@
+---
+layout: default
+title: Research
+description: >-
+  Research of Jacopo Ciambella: physics-augmented neural constitutive models, finite
+  viscoelasticity and viscoplasticity, fracture of elastomers, fibre-reinforced and
+  magneto-active soft materials, and structural identification.
+permalink: /research/
+---
+<header class="page-head">
+  <h1>Research</h1>
+  <p class="lede">
+    The finite-strain mechanics of soft dissipative solids, from constitutive theory and
+    experiments to finite-element computation, with a parallel line on the dynamics and
+    monitoring of structures.
+  </p>
+  <nav class="toc" aria-label="Research themes">
+    {%- for t in site.data.topics %}<a href="#{{ t.key }}">{{ t.title }}</a>{% endfor %}
+    <a href="#projects">Projects</a><a href="#code">Code</a>
+  </nav>
+</header>
+
+{%- for t in site.data.topics %}
+{%- assign tp = site.data.publications | where_exp: "x", "x.topics contains t.key" %}
+{%- comment %} Key papers: journal papers whose first topic is this theme, selected ones first. {% endcomment %}
+{%- assign prim = tp | where: "type", "journal" | where_exp: "x", "x.topics.first == t.key" %}
+{%- assign sel = prim | where: "selected", true %}
+{%- assign rest = prim | where_exp: "x", "x.selected != true" %}
+{%- assign tj = sel | concat: rest %}
+<section class="theme-block" id="{{ t.key }}">
+  <div class="theme-text">
+    <p class="theme-index">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</p>
+    <h2>{{ t.title }}</h2>
+    {{ t.body | markdownify }}
+  </div>
+  <div class="theme-papers">
+    <h3 class="label">Key papers</h3>
+    <ol class="pubs mini">
+      {%- for x in tj limit: 3 %}
+      <li>
+        {%- if x.doi %}<a class="t" href="https://doi.org/{{ x.doi }}">{{ x.title }}</a>{% else %}<span class="t">{{ x.title }}</span>{% endif %}
+        <span class="meta"><em>{{ x.venue }}</em> · {{ x.year }}</span>
+      </li>
+      {%- endfor %}
+    </ol>
+    <a class="more" href="{{ '/publications/' | relative_url }}?topic={{ t.key }}">All {{ tp.size }} papers on this topic {% include icon.html name="arrow" %}</a>
+  </div>
+</section>
+{%- endfor %}
+
+<section class="block" id="projects" aria-labelledby="h-projects">
+  <div class="block-head"><h2 id="h-projects">Funded projects</h2></div>
+  {%- assign roles = "PI,Co-I" | split: "," %}
+  {%- for r in roles %}
+  {%- assign items = site.data.projects | where: "role", r %}
+  <h3 class="label">{% if r == "PI" %}Principal investigator or unit leader{% else %}Co-investigator{% endif %}</h3>
+  <ul class="projects">
+    {%- for pr in items %}
+    <li>
+      <span class="date">{{ pr.years }}</span>
+      <span><span class="what">{{ pr.title }}</span><span class="where">{{ pr.funder }}</span></span>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</section>
+
+<section class="block" id="code" aria-labelledby="h-code">
+  <div class="block-head"><h2 id="h-code">Code</h2></div>
+  <ul class="code-list">
+    {%- for c in site.data.code %}
+    <li>
+      <a href="{{ c.url }}">{% include icon.html name="github" %}{{ c.name }}</a>
+      <p>{{ c.text }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

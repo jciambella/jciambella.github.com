@@ -1,0 +1,55 @@
+# Invited lectures and seminars, newest first.
+# kind: Keynote | Invited | Seminar | Guest lecture | Short course
+
+- year: 2026
+  kind: Keynote
+  event: "Advances in Applied Mechanics Conference 2026"
+  place: "Meloneras, Gran Canaria, Spain"
+  title: "Deep rheological springs and dashpots for data-driven modeling of soft materials"
+
+- year: 2026
+  kind: Invited
+  event: "Nonlinear Elasticity and All That"
+  place: "Bari, Italy"
+  title: "Crack propagation in elastomeric membranes: coupling between finite strain elasticity and rate-dependent effects"
+
+- year: 2026
+  kind: Invited
+  event: "International Conference on Perspectives in Nonlinear Continuum Theories"
+  place: "Castro Urdiales, Spain"
+  title: "A phase-field continuum theory of fracture and fatigue-driven ablation in viscoelastic elastomers"
+
+- year: 2022
+  kind: Guest lecture
+  event: "Technion – Israel Institute of Technology"
+  place: "Haifa, Israel"
+
+- year: 2019
+  kind: Invited
+  event: "Mathematisches Forschungsinstitut Oberwolfach"
+  place: "Oberwolfach, Germany"
+  title: "Large-strain viscoelastic response of fibre-reinforced solids"
+
+- year: 2019
+  kind: Short course
+  event: "Istanbul Technical University"
+  place: "Istanbul, Turkey"
+  title: "Magneto-elastic instabilities in soft actuators"
+
+- year: 2018
+  kind: Invited
+  event: "16th European Mechanics of Materials Conference (EMMC16)"
+  place: "Nantes, France"
+  title: "Finite deformation of fibre-reinforced magneto-elastic rods"
+
+- year: 2017
+  kind: Seminar
+  event: "Leibniz Institute of Polymer Research"
+  place: "Dresden, Germany"
+  title: "Magneto-elasticity of thin actuators"
+
+- year: 2014
+  kind: Seminar
+  event: "Department of Materials Science, University of Cambridge"
+  place: "Cambridge, UK"
+  title: "Large strain elastic response of auxetic foams"

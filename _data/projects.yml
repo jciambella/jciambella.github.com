@@ -1,0 +1,56 @@
+# Funded research. role: PI | Co-I. Newest first within each role.
+
+- role: PI
+  years: "2025 – present"
+  funder: "Leonardo S.p.A."
+  title: "Magnetorheological elastomers for vibration damping and a digital twin of commercial dampers"
+
+- role: PI
+  years: "2023"
+  funder: "Leonardo S.p.A."
+  title: "Magnetorheological materials"
+
+- role: PI
+  years: "2024 – 2025"
+  funder: "A2MX s.r.l."
+  title: "AI-based algorithms and MEMS accelerometers for the structural monitoring of bridges and viaducts"
+
+- role: PI
+  years: "2022 – 2025"
+  funder: "PRIN 2022, Italian Ministry of University and Research"
+  title: "TWYRES – digital TWYn for pneumatic tiRES (PI of the Sapienza research unit)"
+
+- role: PI
+  years: "2022 – 2025"
+  funder: "Bridgestone Europe NV/SA"
+  title: "Nonlinear viscoelastic constitutive models for rubber and numerical routines for their identification and finite-element simulation"
+
+- role: PI
+  years: "2021 – 2023"
+  funder: "Restored Hearing Ltd"
+  title: "Viscoelastic constitutive models for novel acoustic materials"
+
+- role: PI
+  years: "2019, 2021"
+  funder: "Sapienza University of Rome"
+  title: "Fibre-reinforced elements produced by 3D printing"
+
+- role: PI
+  years: "2013 – 2014"
+  funder: "University of Bristol, pump-priming award"
+  title: "Micro/Nano VAT Rubber Panels"
+
+- role: Co-I
+  years: "2018 – 2021"
+  funder: "EU Research Fund for Coal and Steel"
+  title: "DESDEMONA – Detection of steel defects by enhanced monitoring (coordinator: V. Gattulli)"
+
+- role: Co-I
+  years: "2017 – 2020"
+  funder: "Sapienza University of Rome, Progetto di Ateneo"
+  title: "Mechanics of soft-fibred active materials (coordinator: P. Nardinocchi)"
+
+- role: Co-I
+  years: "2017"
+  funder: "Getty Foundation, Keeping It Modern"
+  title: "Conservation plan for the Flaminio Stadium, Rome (coordinator: F. Romeo)"

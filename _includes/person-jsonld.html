@@ -1,0 +1,42 @@
+{%- assign p = site.profile -%}
+{%- assign same = "" | split: "" -%}
+{%- if p.orcid != "" -%}{%- capture u -%}https://orcid.org/{{ p.orcid }}{%- endcapture -%}{%- assign same = same | push: u -%}{%- endif -%}
+{%- if p.scholar != "" -%}{%- capture u -%}https://scholar.google.com/citations?user={{ p.scholar }}{%- endcapture -%}{%- assign same = same | push: u -%}{%- endif -%}
+{%- if p.scopus != "" -%}{%- capture u -%}https://www.scopus.com/authid/detail.uri?authorId={{ p.scopus }}{%- endcapture -%}{%- assign same = same | push: u -%}{%- endif -%}
+{%- if p.researchgate != "" -%}{%- capture u -%}https://www.researchgate.net/profile/{{ p.researchgate }}{%- endcapture -%}{%- assign same = same | push: u -%}{%- endif -%}
+{%- if p.linkedin != "" -%}{%- capture u -%}https://www.linkedin.com/in/{{ p.linkedin }}{%- endcapture -%}{%- assign same = same | push: u -%}{%- endif -%}
+{%- if p.github != "" -%}{%- capture u -%}https://github.com/{{ p.github }}{%- endcapture -%}{%- assign same = same | push: u -%}{%- endif -%}
+{%- if p.institutional != "" -%}{%- assign same = same | push: p.institutional -%}{%- endif -%}
+{%- assign topics = site.data.topics | map: "title" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ p.name | jsonify }},
+  "url": {{ site.url | append: "/" | jsonify }},
+  {%- if p.photo != "" %}
+  "image": {{ p.photo | absolute_url | jsonify }},
+  {%- endif %}
+  "jobTitle": {{ p.position | jsonify }},
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": {{ p.university | jsonify }},
+    "url": {{ p.university_url | jsonify }},
+    "department": { "@type": "Organization", "name": {{ p.department | jsonify }} }
+  },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": {{ p.university | jsonify }} },
+  "email": {{ p.email | prepend: "mailto:" | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Eudossiana 18",
+    "postalCode": "00184",
+    "addressLocality": "Rome",
+    "addressCountry": "IT"
+  },
+  {%- if p.orcid != "" %}
+  "identifier": { "@type": "PropertyValue", "propertyID": "ORCID", "value": {{ p.orcid | jsonify }} },
+  {%- endif %}
+  "knowsAbout": {{ topics | jsonify }},
+  "sameAs": {{ same | jsonify }}
+}
+</script>

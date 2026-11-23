@@ -1,0 +1,71 @@
+# Site settings. Restart `jekyll serve` after editing this file.
+
+title: Jacopo Ciambella
+tagline: Solid and Structural Mechanics, Sapienza University of Rome
+description: >-
+  Jacopo Ciambella, Associate Professor of Solid and Structural Mechanics at
+  Sapienza University of Rome. Research on nonlinear viscoelasticity of
+  elastomers, physics-augmented neural constitutive models, fracture of soft
+  materials, magneto-active materials and structural identification.
+url: "https://jciambella.github.io"
+baseurl: ""
+lang: en_GB
+timezone: Europe/Rome
+
+# Used by the pages, the structured data for search engines and the footer.
+# Leave a field empty ("") to hide the corresponding link.
+profile:
+  name: Jacopo Ciambella
+  initials: JC
+  bib_name: "Ciambella, J."          # how you appear in _data/publications.yml
+  position: Associate Professor of Solid and Structural Mechanics
+  department: Department of Structural and Geotechnical Engineering
+  university: Sapienza University of Rome
+  university_url: "https://www.uniroma1.it"
+  address:
+    - Department of Structural and Geotechnical Engineering
+    - Sapienza University of Rome
+    - Via Eudossiana 18, 00184 Rome, Italy
+  email: jacopo.ciambella@uniroma1.it
+  orcid: "0000-0002-7498-5821"
+  scholar: ""          # Google Scholar user id: the value of ?user= in your profile URL
+  scopus: ""           # Scopus author id
+  researchgate: ""     # e.g. Jacopo-Ciambella
+  linkedin: ""         # e.g. jacopo-ciambella
+  github: jciambella
+  institutional: ""    # full URL of your Sapienza staff page
+  photo: ""            # e.g. /assets/img/profile.jpg (square, at least 400×400 px)
+  cv_pdf: ""           # e.g. /assets/cv.pdf
+
+nav:
+  - { title: About, url: / }
+  - { title: Research, url: /research/ }
+  - { title: Publications, url: /publications/ }
+  - { title: Group, url: /group/ }
+  - { title: CV, url: /cv/ }
+
+# jekyll-seo-tag
+author: Jacopo Ciambella
+social:
+  name: Jacopo Ciambella
+  links:
+    - https://orcid.org/0000-0002-7498-5821
+    - https://github.com/jciambella
+# Paste the token from Google Search Console here to verify ownership:
+# webmaster_verifications:
+#   google: ""
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

@@ -1,0 +1,39 @@
+{%- assign p = include.p -%}
+{%- capture search -%}{{ p.title }} {{ p.authors | join: " " }} {{ p.venue }} {{ p.year }} {{ p.doi }}{%- endcapture -%}
+{%- case p.type -%}
+  {%- when "journal" -%}{%- assign label = "Journal" -%}{%- assign schema = "ScholarlyArticle" -%}
+  {%- when "conference" -%}{%- assign label = "Conference" -%}{%- assign schema = "ScholarlyArticle" -%}
+  {%- else -%}{%- assign label = "Book" -%}{%- assign schema = "Book" -%}
+{%- endcase -%}
+<li class="pub" data-type="{{ p.type }}" data-topics="{{ p.topics | join: ' ' }}" data-selected="{% if p.selected %}true{% else %}false{% endif %}" data-search="{{ search | downcase | strip_newlines | escape }}" itemscope itemtype="https://schema.org/{{ schema }}">
+  <p class="pub-title">
+    {%- if p.doi -%}
+    <a href="https://doi.org/{{ p.doi }}" itemprop="url"><span itemprop="name">{{ p.title }}</span></a>
+    {%- else -%}
+    <span itemprop="name">{{ p.title }}</span>
+    {%- endif -%}
+  </p>
+  <p class="pub-authors">{% include authors.html authors=p.authors %}</p>
+  <p class="pub-venue">
+    {%- if p.type == "book" -%}
+    {{ p.venue }}, {{ p.publisher }}{% if p.isbn %}, ISBN {{ p.isbn }}{% endif %}
+    {%- else -%}
+    <em itemprop="isPartOf">{{ p.venue }}</em>
+    {%- if p.volume %} <span class="vol">{{ p.volume }}</span>{% endif -%}
+    {%- if p.issue %}({{ p.issue }}){% endif -%}
+    {%- if p.pages %}, {{ p.pages }}{% endif -%}
+    {%- endif %} · <span itemprop="datePublished">{{ p.year }}</span>
+    {%- if p.note %} · {{ p.note }}{% endif -%}
+  </p>
+  <div class="pub-actions">
+    <span class="tag tag-{{ p.type }}">{{ label }}</span>
+    {%- if p.selected %}<span class="tag tag-selected">Selected</span>{% endif %}
+    {%- if p.doi %}
+    <a class="action" href="https://doi.org/{{ p.doi }}">DOI {% include icon.html name="external" %}</a>
+    {%- endif %}
+    <details class="bibtex">
+      <summary class="action">BibTeX</summary>
+      <pre>{% include bibtex.html p=p %}</pre>
+    </details>
+  </div>
+</li>
