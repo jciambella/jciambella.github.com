@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<title>JRef</title>
+<!-- JRef logo, "ribbon J": an open journal whose bookmark ribbon curls into the J (chosen 2026-11-16). -->
+<defs>
+<linearGradient id="bg" x1="0" y1="8" x2="0" y2="248" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2B3D58"/><stop offset="1" stop-color="#111827"/></linearGradient>
+<linearGradient id="teal" x1="0" y1="50" x2="0" y2="220" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4FD8E6"/><stop offset="1" stop-color="#1695B3"/></linearGradient>
+<linearGradient id="amber" x1="0" y1="80" x2="0" y2="220" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F4C463"/><stop offset="1" stop-color="#C9862A"/></linearGradient>
+<linearGradient id="page" x1="0" y1="40" x2="0" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FBF5E8"/><stop offset="1" stop-color="#E8DCC2"/></linearGradient>
+</defs>
+<rect x="8" y="8" width="240" height="240" rx="56" fill="url(#bg)"/>
+<rect x="9" y="9" width="238" height="238" rx="55" fill="none" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2"/>
+<!-- ribbon J (behind the book) -->
+<path d="M117 96 H141 V176 A43 43 0 0 1 55 176 V158 L67 167 L79 158 V176 A19 19 0 0 0 117 176 Z" fill="url(#amber)"/>
+<path d="M117 96 H129 V176 A31 31 0 0 1 67 176" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2"/>
+<!-- open journal -->
+<path d="M128 74 C106 62 70 58 32 64 V134 C70 128 106 132 128 144 C150 132 186 128 224 134 V64 C186 58 150 62 128 74 Z" fill="url(#teal)"/>
+<path d="M128 66 C108 54 72 50 40 56 V124 C72 118 108 122 128 134 Z" fill="url(#page)"/>
+<path d="M128 66 C148 54 184 50 216 56 V124 C184 118 148 122 128 134 Z" fill="url(#page)"/>
+<path d="M128 66 V134" stroke="#B9A57C" stroke-width="2"/>
+<g stroke="#C7B892" stroke-width="4" stroke-linecap="round" fill="none">
+<path d="M54 74 C76 70 98 72 114 78"/><path d="M54 88 C76 84 98 86 114 92"/><path d="M54 102 C76 98 98 100 114 106"/>
+<path d="M156 78 C170 72 188 70 202 74"/><path d="M156 92 C170 86 188 84 202 88"/><path d="M156 106 C170 100 188 98 202 102"/>
+</g>
+<g fill="#D9962F"><rect x="142" y="73" width="7" height="7" rx="1.2"/><rect x="142" y="87" width="7" height="7" rx="1.2"/><rect x="142" y="101" width="7" height="7" rx="1.2"/></g>
+</svg>

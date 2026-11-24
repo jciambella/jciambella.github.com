@@ -1,0 +1,108 @@
+---
+layout: default
+title: JRef
+description: >-
+  JRef, a local, file-first reference manager for people who write papers in LaTeX:
+  drag-and-drop import, deterministic citation keys, per-project BibTeX files, full-text
+  search, multi-device sync and an optional AI assistant.
+permalink: /jref/
+---
+<header class="page-head jref-head">
+  <img class="jref-logo" src="{{ '/assets/img/jref-logo.svg' | relative_url }}" alt="" width="88" height="88">
+  <div>
+    <h1>JRef</h1>
+    <p class="lede">
+      A local, file-first reference manager for people who write papers in LaTeX. Every PDF is
+      stored once, named after its citation key, and every project keeps its own BibTeX file up
+      to date, if you like directly inside the folder of the manuscript you are writing.
+    </p>
+    <ul class="links">
+      <li><a href="https://github.com/jciambella/JRef" rel="me">{% include icon.html name="link" %}Source on GitHub</a></li>
+    </ul>
+  </div>
+</header>
+
+<figure class="shot">
+  <img src="{{ '/assets/img/jref-workspace.png' | relative_url }}" width="1480" height="920"
+       alt="The JRef window: shelf with inbox, library and projects, a project header with the manuscript check, filter chips, a list of references and the reference sheet on the right.">
+  <figcaption class="muted small">
+    The JRef workspace. The shelf on the left holds the inbox, library, projects and saved
+    searches; the reference sheet on the right edits the details and shows the exact BibTeX entry.
+  </figcaption>
+</figure>
+
+<section class="block" aria-labelledby="h-features">
+  <div class="block-head"><h2 id="h-features">Main capabilities</h2></div>
+  <ul class="themes">
+    <li class="theme"><div class="card">
+      <h3>Import by drag and drop</h3>
+      <p>PDFs are hashed (SHA-256) so duplicates are refused. JRef reads the DOI or arXiv ID from
+      the first pages, fetches the record from Crossref or arXiv, and falls back to an OpenAlex
+      title search when the PDF prints no identifier.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Deterministic keys and file names</h3>
+      <p><code>Surname_Year</code>, <code>Surname1_Surname2_Year</code>, <code>Surname1_et_al_Year</code>,
+      with <code>a</code>, <code>b</code>, … on collisions. The same string is the BibTeX key and
+      the file name: <code>pdfs/&lt;year&gt;/&lt;key&gt;.pdf</code>.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Projects as logical collections</h3>
+      <p>One PDF can belong to any number of projects without being copied. Each project writes its
+      own <code>.bib</code>, optionally with a second copy next to your <code>.tex</code>, and protects
+      acronyms and proper names in titles with braces.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Manuscript check</h3>
+      <p>Compares the keys cited in your <code>.tex</code> files with the project: cited but missing
+      (one click adds those the library has), and never cited.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Full-text search</h3>
+      <p>Over metadata and the text of the PDFs (SQLite FTS5), with field syntax such as
+      <code>author:anand journal:solids year:2015-2020 is:unread</code>. <kbd>Ctrl</kbd>+<kbd>K</kbd>
+      also runs commands.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Several devices, one library</h3>
+      <p>PCs and an Android app share one library through any synchronised folder (Dropbox, Google
+      Drive, OneDrive, Qsync, Syncthing) using per-device change journals instead of a shared database.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Share a project</h3>
+      <p>Export a project as a ZIP with its PDFs named after their citation keys plus the
+      <code>.bib</code>, ready to send to colleagues. The library itself is not touched.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Study mode and Ask AI</h3>
+      <p>Notes and questions about a paper, using your own API key (OpenAI, Anthropic, Google) or a
+      local model through Ollama.</p>
+    </div></li>
+    <li class="theme"><div class="card">
+      <h3>Inbox, supplements, Mendeley</h3>
+      <p>An inbox folder imports whatever you save into it, entries can carry supplementary files
+      and notes, and a Mendeley import leaves your PDFs where they are.</p>
+    </div></li>
+  </ul>
+</section>
+
+<section class="block" aria-labelledby="h-start">
+  <div class="block-head"><h2 id="h-start">Getting started</h2></div>
+  <div class="prose">
+    <p>
+      On Windows, run the installer: it installs for the current user, needs no administrator
+      rights and brings its own Python. On Windows, macOS and Linux you can also run it from source
+      (Python 3.11 or later):
+    </p>
+    <pre class="cmd"><code>git clone https://github.com/jciambella/JRef jref
+cd jref
+python -m venv .venv
+source .venv/bin/activate     # Windows: .venv\Scripts\activate
+pip install -e ".[gui]"
+jref</code></pre>
+    <p class="muted small">
+      The desktop app is built with PySide6 and the Android app with Kivy. Setup, sync and AI
+      documentation are in the <a href="https://github.com/jciambella/JRef">repository</a>.
+    </p>
+  </div>
+</section>

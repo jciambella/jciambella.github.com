@@ -42,6 +42,7 @@ nav:
   - { title: Research, url: /research/ }
   - { title: Publications, url: /publications/ }
   - { title: Group, url: /group/ }
+  - { title: JRef, url: /jref/ }
   - { title: CV, url: /cv/ }
 
 # jekyll-seo-tag
