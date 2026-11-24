@@ -9,6 +9,10 @@
   --accent: #822433;          /* Sapienza red */
   --accent-strong: #6a1b29;
   --accent-soft: #f5eaeb;
+  --band: #f3ebe8;
+  --hero-from: #fbeeee;
+  --hero-to: #faf9f6;
+  --shadow: 0 1px 2px rgba(60, 20, 25, .06), 0 8px 24px -12px rgba(60, 20, 25, .18);
   --focus: #2b62c9;
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
@@ -32,6 +36,10 @@
     --accent: #e8949e;
     --accent-strong: #f3b3bb;
     --accent-soft: #2c1d20;
+    --band: #1a1517;
+    --hero-from: #2e1a1f;
+    --hero-to: #131211;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .6);
     --focus: #8fb2ff;
     color-scheme: dark;
   }
@@ -48,6 +56,7 @@ body {
   color: var(--text);
   font: 400 1.0625rem/1.6 var(--sans);
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
 h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; margin: 0; letter-spacing: -0.005em; }
@@ -307,6 +316,51 @@ main { padding-bottom: 4rem; }
 .timeline dt { color: var(--faint); font-size: 0.88rem; font-weight: 600; font-variant-numeric: tabular-nums; padding-top: 0.12rem; }
 .timeline dd { margin: 0; }
 
+/* ------------------------------------------------------------------ colour & depth */
+.site-header { border-bottom: 0; border-top: 4px solid var(--accent); box-shadow: 0 1px 0 var(--line); }
+
+.hero, .hero + .block { position: relative; isolation: isolate; }
+.hero::before, .hero + .block::before {
+  content: ""; position: absolute; z-index: -1; top: 0; bottom: 0;
+  left: 50%; width: 100vw; transform: translateX(-50%);
+}
+.hero::before { background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 70%); }
+.hero + .block { padding-bottom: 3rem; margin-bottom: 1rem; }
+.hero + .block::before { background: var(--band); }
+.hero + .block .block-head { border-top-color: color-mix(in srgb, var(--accent) 25%, var(--line)); }
+
+.portrait img, .monogram { box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--accent), var(--shadow); }
+.hero h1 {
+  background: linear-gradient(90deg, var(--text) 40%, var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.eyebrow { color: var(--accent); }
+
+.block-head h2 { position: relative; }
+.block-head h2::after {
+  content: ""; display: block; width: 2.25rem; height: 3px; margin-top: 0.4rem;
+  background: var(--accent); border-radius: 2px;
+}
+
+.theme a, .code-list li, .people li { box-shadow: var(--shadow); }
+.theme a { border-top: 3px solid var(--accent); transition: border-color .15s, transform .2s, box-shadow .2s; }
+.theme a:hover, .code-list li:hover, .people li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(60, 20, 25, .08), 0 16px 32px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.code-list li, .people li { transition: transform .2s, box-shadow .2s; }
+
+.links a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.links a:hover .icon { color: inherit; }
+@media (prefers-color-scheme: dark) {
+  .links a:hover { color: #1b1a18; }
+}
+.theme-block { border-top-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
+@media (prefers-reduced-motion: reduce) {
+  .theme a, .code-list li, .people li { transition: none; }
+  .theme a:hover, .code-list li:hover, .people li:hover { transform: none; }
+}
+
 /* ------------------------------------------------------------------ responsive */
 @media (max-width: 880px) {
   .split { grid-template-columns: 1fr; }
@@ -331,5 +385,7 @@ main { padding-bottom: 4rem; }
   :root { --bg: #fff; --surface: #fff; --text: #000; --muted: #333; --faint: #555; --line: #ccc; --accent: #000; }
   .site-header nav, .pub-tools, .pub-actions, .more, .toc, .skip { display: none !important; }
   .block, .theme-block { break-inside: avoid-page; }
+  .hero::before, .hero + .block::before { display: none; }
+  .hero h1 { color: #000; background: none; }
   a { color: inherit; text-decoration: none; }
 }
