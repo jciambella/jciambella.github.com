@@ -3,16 +3,16 @@ layout: default
 jsonld: true
 ---
 {%- assign p = site.profile -%}
-<section class="hero">
-  <div class="portrait">
-    {%- if p.photo != "" %}
-    <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="220" height="220">
-    {%- else %}
-    <div class="monogram" aria-hidden="true">{{ p.initials }}</div>
-    {%- endif %}
-  </div>
-  <div class="intro">
-    <p class="eyebrow"><a href="{{ p.university_url }}">{{ p.university }}</a></p>
+{%- assign pubs = site.data.publications -%}
+{%- assign nj = pubs | where: "type", "journal" | size -%}
+{%- assign g = site.data.people -%}
+{%- assign nphd = g.current.size | plus: g.alumni.size | plus: g.cosupervised.size -%}
+{%- assign since = pubs | last -%}
+{%- assign talk = site.data.talks | first -%}
+{%- assign npi = site.data.projects | where: "role", "PI" | size -%}
+<section class="bento bento-intro" aria-label="Profile">
+  <div class="tile tile-intro">
+    <p class="mono">{{ p.university }}</p>
     <h1>{{ p.name }}</h1>
     <p class="role">{{ p.position }}<br>{{ p.department }}</p>
     <p class="bio">
@@ -26,67 +26,81 @@ jsonld: true
     </p>
     {% include profile-links.html %}
   </div>
+  <div class="tile tile-photo">
+    {%- if p.photo != "" %}
+    <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="560" height="640">
+    {%- else %}
+    <div class="monogram" aria-hidden="true">{{ p.initials }}</div>
+    {%- endif %}
+  </div>
+  <a class="tile tile-stat" href="{{ '/publications/' | relative_url }}">
+    <span class="num">{{ pubs.size }}</span><span class="lbl">publications</span><span class="sub mono">{{ nj }} journal articles · since {{ since.year }}</span>
+  </a>
+  <a class="tile tile-stat" href="{{ '/research/' | relative_url }}#projects">
+    <span class="num">{{ site.data.projects.size }}</span><span class="lbl">funded projects</span><span class="sub mono">{{ npi }} as principal investigator</span>
+  </a>
+  <a class="tile tile-stat" href="{{ '/group/' | relative_url }}">
+    <span class="num">{{ nphd }}</span><span class="lbl">PhD students</span><span class="sub mono">supervised and co-supervised</span>
+  </a>
+  <a class="tile tile-stat tile-accent" href="{{ '/cv/' | relative_url }}#talks">
+    <span class="sub mono">{{ talk.year }} · {{ talk.kind }}</span><span class="lbl strong">{{ talk.event }}</span><span class="sub">{{ talk.place }}</span>
+  </a>
 </section>
 
-<section class="block" aria-labelledby="h-themes">
-  <div class="block-head">
+<section class="bento-section" aria-labelledby="h-themes">
+  <div class="bento-head">
     <h2 id="h-themes">Research</h2>
     <a class="more" href="{{ '/research/' | relative_url }}">All research {% include icon.html name="arrow" %}</a>
   </div>
-  <ul class="themes">
+  <div class="bento bento-research">
     {%- for t in site.data.topics %}
-    {%- assign thumb = t.thumb | default: t.image %}
-    <li class="theme{% if thumb %} has-fig{% endif %}">
-      <a href="{{ '/research/' | relative_url }}#{{ t.key }}">
-        {%- if thumb %}
-        <span class="theme-thumb"><img src="{{ thumb | relative_url }}" alt="" width="800" height="500" loading="lazy" decoding="async"{% if t.thumb_pos %} style="object-position: {{ t.thumb_pos }}"{% endif %}></span>
-        {%- endif %}
+    {%- if forloop.first %}{% assign pic = t.image | default: t.thumb %}{% else %}{% assign pic = t.thumb | default: t.image %}{% endif %}
+    <a class="tile tile-theme t{{ forloop.index }}" href="{{ '/research/' | relative_url }}#{{ t.key }}">
+      {%- if pic %}<span class="tile-img"><img src="{{ pic | relative_url }}" alt="" loading="lazy" decoding="async"></span>{% endif %}
+      <span class="tile-body">
+        <span class="mono">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
         <h3>{{ t.title }}</h3>
         <p>{{ t.short }}</p>
-      </a>
-    </li>
+      </span>
+    </a>
     {%- endfor %}
-  </ul>
+  </div>
 </section>
 
-<div class="split">
-  <section class="block" aria-labelledby="h-latest">
-    <div class="block-head">
+<section class="bento bento-feed" aria-label="Latest">
+  <div class="tile tile-pubs">
+    <div class="bento-head small">
       <h2 id="h-latest">Latest publications</h2>
-      <a class="more" href="{{ '/publications/' | relative_url }}">All {{ site.data.publications.size }} {% include icon.html name="arrow" %}</a>
+      <a class="more" href="{{ '/publications/' | relative_url }}">All {{ pubs.size }} {% include icon.html name="arrow" %}</a>
     </div>
-    {%- assign latest = site.data.publications | where: "type", "journal" %}
+    {%- assign latest = pubs | where: "type", "journal" %}
     <ol class="pubs compact">
       {%- for pub in latest limit: 5 %}
       {% include pub.html p=pub %}
       {%- endfor %}
     </ol>
-  </section>
-
-  <aside class="side">
-    <section class="block" aria-labelledby="h-news">
-      <div class="block-head"><h2 id="h-news">Highlights</h2></div>
-      <ul class="news">
-        {%- for n in site.data.news %}
-        <li><span class="date">{{ n.date }}</span><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
-        {%- endfor %}
-      </ul>
-    </section>
-
-    <section class="block" aria-labelledby="h-talks">
-      <div class="block-head">
-        <h2 id="h-talks">Recent talks</h2>
-        <a class="more" href="{{ '/cv/' | relative_url }}#talks">All {% include icon.html name="arrow" %}</a>
-      </div>
-      <ul class="talks">
-        {%- for t in site.data.talks limit: 3 %}
-        <li>
-          <span class="date">{{ t.year }} · {{ t.kind }}</span>
-          {%- if t.title %}<span class="talk-title">{{ t.title }}</span>{% endif %}
-          <span class="talk-event">{{ t.event }}, {{ t.place }}</span>
-        </li>
-        {%- endfor %}
-      </ul>
-    </section>
-  </aside>
-</div>
+  </div>
+  <div class="tile tile-news">
+    <div class="bento-head small"><h2 id="h-news">Highlights</h2></div>
+    <ul class="news">
+      {%- for n in site.data.news limit: 4 %}
+      <li><span class="date">{{ n.date }}</span><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="tile tile-talks">
+    <div class="bento-head small">
+      <h2 id="h-talks">Recent talks</h2>
+      <a class="more" href="{{ '/cv/' | relative_url }}#talks">All {% include icon.html name="arrow" %}</a>
+    </div>
+    <ul class="talks">
+      {%- for t in site.data.talks limit: 3 %}
+      <li>
+        <span class="date">{{ t.year }} · {{ t.kind }}</span>
+        {%- if t.title %}<span class="talk-title">{{ t.title }}</span>{% endif %}
+        <span class="talk-event">{{ t.event }}, {{ t.place }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

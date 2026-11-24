@@ -45,6 +45,21 @@ first):
 The publication list, counts, BibTeX, topic pages and "Latest publications"
 on the home page all update from this one entry.
 
+## Look and feel
+
+The site uses the "Bento" theme: rounded tiles on a quiet background, a
+floating pill menu, Geist for text and Geist Mono for small labels, with light
+and dark versions that follow the visitor's system setting. The fonts are
+self-hosted in `assets/fonts/` (SIL Open Font License), so no request goes to
+Google Fonts. All styles are in `assets/css/main.css`: the shared layout rules
+come first and the theme layer is at the end of the file; colours are the
+custom properties at the top of that layer (`--bg`, `--accent`, ...).
+
+The numbers in the home-page tiles (publications, journal articles, first
+year, funded projects, projects as PI, PhD students) are counted from the
+`_data` files, and the red tile shows the first entry of `_data/talks.yml`,
+so they update by themselves.
+
 ## Research figures
 
 Each theme in `_data/topics.yml` can carry a figure: put the file in
