@@ -34,7 +34,7 @@ profile:
   linkedin: ""         # e.g. jacopo-ciambella
   github: jciambella
   institutional: ""    # full URL of your Sapienza staff page
-  photo: ""            # e.g. /assets/img/profile.jpg (square, at least 400×400 px)
+  photo: /assets/img/profile.jpg            # e.g. /assets/img/profile.jpg (square, at least 400×400 px)
   cv_pdf: ""           # e.g. /assets/cv.pdf
 
 nav:
