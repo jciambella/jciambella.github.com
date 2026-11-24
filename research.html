@@ -27,12 +27,24 @@ permalink: /research/
 {%- assign sel = prim | where: "selected", true %}
 {%- assign rest = prim | where_exp: "x", "x.selected != true" %}
 {%- assign tj = sel | concat: rest %}
-<section class="theme-block" id="{{ t.key }}">
+{%- assign odd = forloop.index | modulo: 2 %}
+<section class="theme-block{% if t.image %} with-fig{% if odd == 0 %} flip{% endif %}{% endif %}" id="{{ t.key }}">
   <div class="theme-text">
     <p class="theme-index">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</p>
     <h2>{{ t.title }}</h2>
     {{ t.body | markdownify }}
   </div>
+  {%- if t.image %}
+  <figure class="theme-figure">
+    <a href="{{ t.image | relative_url }}" title="Open the full-size figure"><img src="{{ t.image | relative_url }}" alt="{{ t.image_alt | default: t.title | escape }}" loading="lazy" decoding="async"></a>
+    {%- if t.caption or t.credit %}
+    <figcaption>
+      {%- if t.caption %}{{ t.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
+      {%- if t.credit %} <span class="credit">{{ t.credit | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>{% endif -%}
+    </figcaption>
+    {%- endif %}
+  </figure>
+  {%- endif %}
   <div class="theme-papers">
     <h3 class="label">Key papers</h3>
     <ol class="pubs mini">

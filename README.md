@@ -11,6 +11,7 @@ Personal academic website of Jacopo Ciambella, served by GitHub Pages at
 | Name, position, links, photo, CV   | `_config.yml` → `profile:`    |
 | Publications                       | `_data/publications.yml`      |
 | Research themes (Home + Research)  | `_data/topics.yml`            |
+| Research figures                   | `assets/img/research/` + `image:` fields in `_data/topics.yml` |
 | Highlights on the home page        | `_data/news.yml`              |
 | Invited talks                      | `_data/talks.yml`             |
 | Funded projects                    | `_data/projects.yml`          |
@@ -43,6 +44,17 @@ first):
 
 The publication list, counts, BibTeX, topic pages and "Latest publications"
 on the home page all update from this one entry.
+
+## Research figures
+
+Each theme in `_data/topics.yml` can carry a figure: put the file in
+`assets/img/research/` and set `image:` (and optionally `thumb:`, `caption:`,
+`credit:`, `image_alt:`) on the theme. The Home page shows a 16:10 crop on the
+theme card; the Research page shows the full figure with its caption,
+alternating left and right. Keep files under ~250 kB: about 1400 px wide for
+`image` and 800×500 px for `thumb` (WebP keeps them small). For figures already published in a journal,
+check that the publisher's author-rights policy allows reuse on a personal
+website and give the source in `credit:`.
 
 ## Photo and CV
 

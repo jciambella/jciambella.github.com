@@ -35,8 +35,12 @@ jsonld: true
   </div>
   <ul class="themes">
     {%- for t in site.data.topics %}
-    <li class="theme">
+    {%- assign thumb = t.thumb | default: t.image %}
+    <li class="theme{% if thumb %} has-fig{% endif %}">
       <a href="{{ '/research/' | relative_url }}#{{ t.key }}">
+        {%- if thumb %}
+        <span class="theme-thumb"><img src="{{ thumb | relative_url }}" alt="" width="800" height="500" loading="lazy" decoding="async"{% if t.thumb_pos %} style="object-position: {{ t.thumb_pos }}"{% endif %}></span>
+        {%- endif %}
         <h3>{{ t.title }}</h3>
         <p>{{ t.short }}</p>
       </a>

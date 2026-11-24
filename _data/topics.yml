@@ -1,7 +1,20 @@
 # Research themes. Order here is the order on the Home and Research pages.
 # `key` is what publications list under `topics:`.
+#
+# Optional figure fields (leave them out and the theme is shown without a figure):
+#   image:      full figure for the Research page, e.g. /assets/img/research/visco.jpg
+#   thumb:      16:10 crop for the Home card (defaults to `image`)
+#   thumb_pos:  which part of `image` the Home card keeps when there is no thumb, e.g. "50% 30%"
+#   image_alt:  one-sentence description of the figure for screen readers
+#   caption:    caption under the figure on the Research page (Markdown)
+#   credit:     source, e.g. "From Califano & Ciambella, *Mech. Mater.* 2026."
 
 - key: neural
+  image: /assets/img/research/neural.webp
+  thumb: /assets/img/research/neural-thumb.webp
+  image_alt: "Finite-element contour plots: a twisted hollow cylinder and a porous square with elliptical cavities."
+  caption: "The Deep Rheological Element implemented in FEniCSx and tested on deformations absent from the training set: torsion of a hollow cylinder (left) and a porous microstructure with local strains above 100% near the cavities (right)."
+  credit: "Keynote at *Advances in Applied Mechanics 2026* (with F. Califano, S. Domesi, A. Vertaglia)."
   title: "Physics-augmented neural constitutive models"
   short: "Neural networks inside thermodynamically admissible rheological structures, implemented in finite elements."
   body: >-
@@ -14,6 +27,11 @@
     open-source finite-element framework built on FEniCSx.
 
 - key: visco
+  image: /assets/img/research/visco.webp
+  thumb: /assets/img/research/visco-thumb.webp
+  image_alt: "Stress–strain hysteresis loop in simple shear with the enclosed area shaded."
+  caption: "Simple-shear response of a finite viscoelastic model with a neural-network viscosity under triangular loading, beyond the range of the fitting data: the hysteresis loop (shaded) stays dissipative."
+  credit: "ICACM 2025, Tokyo (with S. Domesi, F. Califano)."
   title: "Finite viscoelasticity and viscoplasticity"
   short: "Modelling, testing and identification of soft dissipative solids at large strains."
   body: >-
@@ -25,6 +43,11 @@
     carried out in industrial collaboration.
 
 - key: fracture
+  image: /assets/img/research/fracture.webp
+  thumb: /assets/img/research/fracture-thumb.webp
+  image_alt: "Two contour plots of a pre-stretched membrane, before and during crack propagation, with the highest values concentrated at the crack tip."
+  caption: "Phase-field simulation of crack propagation in a pre-stretched viscoelastic elastomer membrane: contours of the velocity magnitude ‖u̇‖ just after the cut is introduced (left) and while the crack propagates (right)."
+  credit: "ESMC 2025, Lyon; see Ciambella, Lancioni & Stortini, *Eur. J. Mech. A/Solids* 113 (2025)."
   title: "Fracture of elastomers"
   short: "Viscoelastic phase-field models of rate-dependent crack propagation."
   body: >-
@@ -34,6 +57,11 @@
     elastomers.
 
 - key: fibres
+  image: /assets/img/research/fibres.webp
+  thumb: /assets/img/research/fibres-thumb.webp
+  image_alt: "Six finite-element snapshots of a fibre-reinforced plate with a circular hole, with arrows showing the fibre directions."
+  caption: "Kirsch problem for a fibre-reinforced plate with a circular hole: the fibre directions (arrows) reorient as the plate is stretched to λ = 1.65 (a–c) and keep evolving while it is unloaded back to λ = 1 (d–f). Finite-element simulation in COMSOL Multiphysics."
+  credit: "Euromech Colloquium 634 (2023); see Ciambella & Rubin, *Eur. J. Mech. A/Solids* 100 (2023)."
   title: "Anisotropic, fibre-reinforced and architected materials"
   short: "Fibre reorientation, anisotropic visco-hyperelasticity, soft tissues, auxetics and composites."
   body: >-
@@ -44,6 +72,11 @@
     steel-fibre reinforced composites, including 3D-printed elements.
 
 - key: magneto
+  image: /assets/img/research/magneto.webp
+  thumb: /assets/img/research/magneto-thumb.webp
+  image_alt: "A clamped rod drawn in five deformed shapes, each paired with an applied magnetic field direction from h1 to h2."
+  caption: "Form finding of a thin magneto-elastic actuator: one magnetisation profile is designed so that the clamped rod attains a family of target shapes as the applied field turns from **h**₁ to **h**₂."
+  credit: "AIMETA 2019 (with G. Tomassetti); see Ciambella & Tomassetti, *Int. J. Non-Linear Mech.* 119 (2020)."
   title: "Magneto-active soft materials"
   short: "Magneto-elastic rods, actuators, laminates and magnetorheological elastomers."
   body: >-
@@ -53,6 +86,11 @@
     elastomers for vibration damping, developed in industrial collaboration.
 
 - key: shm
+  image: /assets/img/research/shm.webp
+  thumb: /assets/img/research/shm-thumb.webp
+  image_alt: "Photograph of a motorway viaduct with red markers showing sensor positions on the deck and on a pier."
+  caption: "Dynamic monitoring of a viaduct on the A24–A25 motorway network: six uniaxial and two triaxial MEMS accelerometers (circles) and three inclinometers (triangles) on both sides of the curved deck and on the pier shaft."
+  credit: "FABRE 2022 conference, Lucca (with M. Antonelli, D. Bernardini, A. Paolone and others)."
   title: "Structural identification and monitoring"
   short: "Vibration-based damage identification, bridges and modern heritage structures."
   body: >-
