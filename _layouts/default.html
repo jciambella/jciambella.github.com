@@ -38,10 +38,15 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <address>
-        {%- for line in site.profile.address %}{{ line }}<br>{% endfor -%}
-        <a href="mailto:{{ site.profile.email }}">{{ site.profile.email }}</a>
-      </address>
+      <div class="footer-affil">
+        {%- if site.profile.logo and site.profile.logo != "" %}
+        <a href="{{ site.profile.university_url }}"><img src="{{ site.profile.logo | relative_url }}" alt="{{ site.profile.university }}" width="34" height="41"></a>
+        {%- endif %}
+        <address>
+          {%- for line in site.profile.address %}{{ line }}<br>{% endfor -%}
+          <a href="mailto:{{ site.profile.email }}">{{ site.profile.email }}</a>
+        </address>
+      </div>
       <p class="small">
         © {{ site.time | date: "%Y" }} {{ site.profile.name }} · Updated {{ site.time | date: "%B %Y" }}
       </p>

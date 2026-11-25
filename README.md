@@ -8,7 +8,7 @@ Personal academic website of Jacopo Ciambella, served by GitHub Pages at
 
 | To change…                         | edit                          |
 |------------------------------------|-------------------------------|
-| Name, position, links, photo, CV   | `_config.yml` → `profile:`    |
+| Name, position, links, photo, CV, university logo | `_config.yml` → `profile:` |
 | Publications                       | `_data/publications.yml`      |
 | Research themes (Home + Research)  | `_data/topics.yml`            |
 | Research figures                   | `assets/img/research/` + `image:` fields in `_data/topics.yml` |
@@ -19,9 +19,10 @@ Personal academic website of Jacopo Ciambella, served by GitHub Pages at
 | CV page (bio, positions, service…) | `_data/cv.yml`                |
 | Public code                        | `_data/code.yml`              |
 | Home page intro paragraph          | `index.html`                  |
+| Contact page (office room, phone, office hours) | `_config.yml` → `profile:` (`office`, `phone`, `office_hours`); layout in `contact.html` |
 
 Pages: `index.html`, `research.html`, `publications.html`, `group.html`,
-`cv.html`. Layout in `_layouts/`, fragments in `_includes/`, styles in
+`cv.html`, `contact.html`. Layout in `_layouts/`, fragments in `_includes/`, styles in
 `assets/css/main.css`.
 
 ## Adding a paper

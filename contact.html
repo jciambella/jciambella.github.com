@@ -1,0 +1,57 @@
+---
+layout: default
+title: Contact
+description: >-
+  How to contact Jacopo Ciambella: e-mail, office address at the Department of
+  Structural and Geotechnical Engineering, Sapienza University of Rome, and online profiles.
+permalink: /contact/
+---
+{%- assign p = site.profile -%}
+{%- assign street = p.address | last -%}
+<header class="page-head">
+  <h1>Contact</h1>
+  <p class="lede">E-mail, office address and online profiles.</p>
+</header>
+
+<section class="bento contact" aria-label="Contact details">
+  <a class="tile" href="mailto:{{ p.email }}">
+    <span class="mono">E-mail</span>
+    <span class="contact-main">{{ p.email }}</span>
+    <span class="more">Write an e-mail {% include icon.html name="arrow" %}</span>
+  </a>
+
+  <div class="tile">
+    <span class="mono">Office</span>
+    <div class="tile-logo">
+      {%- if p.logo and p.logo != "" %}<img src="{{ p.logo | relative_url }}" alt="" width="47" height="56">{% endif %}
+      <address>
+        {%- if p.office and p.office != "" %}<strong>{{ p.office }}</strong><br>{% endif -%}
+        {%- for line in p.address %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor -%}
+      </address>
+    </div>
+    {%- if p.office_hours and p.office_hours != "" %}<p>Office hours: {{ p.office_hours }}</p>{% endif %}
+    <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query={{ street | url_encode }}">Open in Google Maps {% include icon.html name="external" %}</a>
+  </div>
+
+  {%- if p.phone and p.phone != "" %}
+  <a class="tile" href="tel:{{ p.phone | remove: ' ' }}">
+    <span class="mono">Phone</span>
+    <span class="contact-main">{{ p.phone }}</span>
+  </a>
+  {%- endif %}
+
+  <div class="tile wide">
+    <span class="mono">Online</span>
+    {% include profile-links.html %}
+  </div>
+
+  <div class="tile wide">
+    <span class="mono">Students</span>
+    <p>
+      Students interested in a BSc, MSc or PhD thesis on these
+      <a href="{{ '/research/' | relative_url }}">research topics</a> are welcome to
+      <a href="mailto:{{ p.email }}">get in touch</a>; current and former PhD students are
+      listed on the <a href="{{ '/group/' | relative_url }}">Group</a> page.
+    </p>
+  </div>
+</section>

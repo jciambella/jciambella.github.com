@@ -22,11 +22,15 @@ profile:
   department: Department of Structural and Geotechnical Engineering
   university: Sapienza University of Rome
   university_url: "https://www.uniroma1.it"
+  logo: /assets/img/sapienza-seal.svg   # university mark next to the affiliation and in the footer ("" hides it)
   address:
     - Department of Structural and Geotechnical Engineering
     - Sapienza University of Rome
     - Via Eudossiana 18, 00184 Rome, Italy
   email: jacopo.ciambella@uniroma1.it
+  office: ""          # room and building shown on the Contact page, e.g. "Room 12, second floor"
+  phone: ""           # office phone; the Contact page shows it only when filled in
+  office_hours: ""    # e.g. "Tuesday 10:00–12:00, by appointment"
   orcid: "0000-0002-7498-5821"
   scholar: ""          # Google Scholar user id: the value of ?user= in your profile URL
   scopus: ""           # Scopus author id
@@ -44,6 +48,7 @@ nav:
   - { title: Group, url: /group/ }
   - { title: JRef, url: /jref/ }
   - { title: CV, url: /cv/ }
+  - { title: Contact, url: /contact/ }
 
 # jekyll-seo-tag
 author: Jacopo Ciambella

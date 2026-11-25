@@ -12,9 +12,22 @@ jsonld: true
 {%- assign npi = site.data.projects | where: "role", "PI" | size -%}
 <section class="bento bento-intro" aria-label="Profile">
   <div class="tile tile-intro">
-    <p class="mono">{{ p.university }}</p>
-    <h1>{{ p.name }}</h1>
-    <p class="role">{{ p.position }}<br>{{ p.department }}</p>
+    <div class="intro-head">
+      {%- if p.photo != "" %}
+      <img class="intro-photo" src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="200" height="200">
+      {%- else %}
+      <div class="intro-photo monogram" aria-hidden="true">{{ p.initials }}</div>
+      {%- endif %}
+      <div class="intro-id">
+        <h1>{{ p.name }}</h1>
+        <div class="affil">
+          {%- if p.logo and p.logo != "" %}
+          <a class="affil-logo" href="{{ p.university_url }}"><img src="{{ p.logo | relative_url }}" alt="{{ p.university }}" width="54" height="65"></a>
+          {%- endif %}
+          <p class="role">{{ p.position }}<br>{{ p.department }}<br><a href="{{ p.university_url }}">{{ p.university }}</a></p>
+        </div>
+      </div>
+    </div>
     <p class="bio">
       I study the mechanics of soft dissipative solids at large strains (elastomers, filled
       rubber, soft biological and magneto-active materials) by combining continuum
@@ -25,13 +38,6 @@ jsonld: true
       industry, through industrial collaborations.
     </p>
     {% include profile-links.html %}
-  </div>
-  <div class="tile tile-photo">
-    {%- if p.photo != "" %}
-    <img src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="560" height="640">
-    {%- else %}
-    <div class="monogram" aria-hidden="true">{{ p.initials }}</div>
-    {%- endif %}
   </div>
   <a class="tile tile-stat" href="{{ '/publications/' | relative_url }}">
     <span class="num">{{ pubs.size }}</span><span class="lbl">publications</span><span class="sub mono">{{ nj }} journal articles · since {{ since.year }}</span>
