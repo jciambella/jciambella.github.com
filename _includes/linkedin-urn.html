@@ -1,0 +1,21 @@
+{%- comment -%}
+  Turns whatever was copied from LinkedIn into a post URN (urn:li:activity:…,
+  urn:li:share:… or urn:li:ugcPost:…). Accepted input, in _data/news.yml:
+    - the post link from "⋯ → Copy link to post"
+      https://www.linkedin.com/posts/name_slug-activity-7401234567890123456-AbCd
+    - the code from "⋯ → Embed this post" (the whole <iframe …> snippet)
+    - the URN itself, or a linkedin.com/feed/update/urn:li:… link
+  Short lnkd.in links cannot be read and give an empty result.
+  Usage: {% capture urn %}{% include linkedin-urn.html v=item.linkedin %}{% endcapture %}
+{%- endcomment -%}
+{%- assign v = include.v | strip | replace: "%3A", ":" | replace: "%3a", ":" -%}
+{%- if v contains "urn:li:" -%}
+  {%- assign u = v | split: "urn:li:" | last | split: '"' | first | split: "?" | first | split: "/" | first | split: " " | first | strip -%}
+  urn:li:{{ u }}
+{%- elsif v contains "-activity-" -%}
+  urn:li:activity:{{ v | split: "-activity-" | last | split: "-" | first | split: "/" | first }}
+{%- elsif v contains "-ugcPost-" -%}
+  urn:li:ugcPost:{{ v | split: "-ugcPost-" | last | split: "-" | first | split: "/" | first }}
+{%- elsif v contains "-share-" -%}
+  urn:li:share:{{ v | split: "-share-" | last | split: "-" | first | split: "/" | first }}
+{%- endif -%}

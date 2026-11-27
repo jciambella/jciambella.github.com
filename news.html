@@ -1,0 +1,47 @@
+---
+layout: default
+title: News
+description: >-
+  News from the research of Jacopo Ciambella at Sapienza University of Rome:
+  publications, invited talks, projects, editorial roles and group news.
+permalink: /news/
+scripts: [/assets/js/linkedin-embed.js]
+---
+{%- assign p = site.profile -%}
+{%- assign li_items = site.data.news | where_exp: "n", "n.linkedin != nil" -%}
+<header class="page-head">
+  <h1>News</h1>
+  <p class="lede">
+    Publications, talks, projects and group news.
+    {%- if p.linkedin != "" %}
+    Several items are also posted on
+    <a href="https://www.linkedin.com/in/{{ p.linkedin }}" rel="me">LinkedIn</a>, where they can be
+    discussed and followed.
+    {%- endif %}
+  </p>
+  {%- if li_items.size > 1 %}
+  <p class="li-all-wrap"><button type="button" class="li-all" hidden>Show all LinkedIn posts on this page</button></p>
+  {%- endif %}
+</header>
+
+<section class="news-list" aria-label="News">
+  {%- for n in site.data.news %}
+  {%- assign urn = "" %}
+  {%- if n.linkedin %}{% capture urn %}{% include linkedin-urn.html v=n.linkedin %}{% endcapture %}{% assign urn = urn | strip %}{% endif %}
+  <article class="tile news-item{% if urn != '' %} has-li{% endif %}">
+    <p class="date">{{ n.date }}</p>
+    <div class="news-text">{{ n.text | markdownify }}</div>
+    {%- if urn != "" %}
+    <div class="li-embed" data-src="https://www.linkedin.com/embed/feed/update/{{ urn }}" data-height="{{ n.linkedin_height | default: 560 }}">
+      <div class="li-facade">
+        <p class="li-note">{% include icon.html name="linkedin" %}<span>This item is also a post on LinkedIn. Showing it here loads content from LinkedIn, which may set cookies.</span></p>
+        <div class="li-actions">
+          <button type="button" class="li-load" hidden>Show the post</button>
+          <a href="https://www.linkedin.com/feed/update/{{ urn }}/">Open on LinkedIn {% include icon.html name="external" %}</a>
+        </div>
+      </div>
+    </div>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</section>
