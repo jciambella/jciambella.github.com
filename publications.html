@@ -8,14 +8,16 @@ description: >-
 permalink: /publications/
 scripts: [/assets/js/publications.js]
 ---
-{%- assign pubs = site.data.publications -%}
+{%- assign pubs = site.data.publications | where_exp: "x", "x.type != 'submitted'" -%}
+{%- assign subm = site.data.publications | where: "type", "submitted" -%}
 {%- assign nj = pubs | where: "type", "journal" | size -%}
 {%- assign nc = pubs | where: "type", "conference" | size -%}
 {%- assign nb = pubs | where: "type", "book" | size -%}
 <header class="page-head">
   <h1>Publications</h1>
   <p class="lede">
-    {{ nj }} journal articles, {{ nc }} conference papers and {{ nb }} book{% if nb != 1 %}s{% endif %}.
+    {{ nj }} journal articles, {{ nc }} conference papers and {{ nb }} book{% if nb != 1 %}s{% endif %}
+    {%- if subm.size > 0 %}, plus {{ subm.size }} manuscript{% if subm.size != 1 %}s{% endif %} under review{% endif %}.
     {%- if site.profile.scholar != "" or site.profile.orcid != "" %}
     Also on
     {% if site.profile.scholar != "" %}<a href="https://scholar.google.com/citations?user={{ site.profile.scholar }}">Google Scholar</a>{% if site.profile.orcid != "" %} and {% endif %}{% endif -%}
@@ -31,6 +33,9 @@ scripts: [/assets/js/publications.js]
     <button type="button" data-type="journal" aria-pressed="false">Journal</button>
     <button type="button" data-type="conference" aria-pressed="false">Conference</button>
     <button type="button" data-type="book" aria-pressed="false">Book</button>
+    {%- if subm.size > 0 %}
+    <button type="button" data-type="submitted" aria-pressed="false">Under review</button>
+    {%- endif %}
   </div>
   <label class="visually-hidden" for="pub-topic">Topic</label>
   <select id="pub-topic">
@@ -44,6 +49,16 @@ scripts: [/assets/js/publications.js]
   <p class="pub-count" aria-live="polite"></p>
 </div>
 
+{%- if subm.size > 0 %}
+<section class="year-group" aria-label="Under review">
+  <h2 class="year year-label">Under review</h2>
+  <ol class="pubs">
+    {%- for pub in subm %}
+    {% include pub.html p=pub %}
+    {%- endfor %}
+  </ol>
+</section>
+{%- endif %}
 {%- assign by_year = pubs | group_by: "year" %}
 {%- for g in by_year %}
 <section class="year-group" aria-label="{{ g.name }}">

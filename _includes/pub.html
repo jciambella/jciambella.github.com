@@ -3,6 +3,7 @@
 {%- case p.type -%}
   {%- when "journal" -%}{%- assign label = "Journal" -%}{%- assign schema = "ScholarlyArticle" -%}
   {%- when "conference" -%}{%- assign label = "Conference" -%}{%- assign schema = "ScholarlyArticle" -%}
+  {%- when "submitted" -%}{%- assign label = "Under review" -%}{%- assign schema = "ScholarlyArticle" -%}
   {%- else -%}{%- assign label = "Book" -%}{%- assign schema = "Book" -%}
 {%- endcase -%}
 <li class="pub" data-type="{{ p.type }}" data-topics="{{ p.topics | join: ' ' }}" data-selected="{% if p.selected %}true{% else %}false{% endif %}" data-search="{{ search | downcase | strip_newlines | escape }}" itemscope itemtype="https://schema.org/{{ schema }}">
@@ -17,12 +18,14 @@
   <p class="pub-venue">
     {%- if p.type == "book" -%}
     {{ p.venue }}, {{ p.publisher }}{% if p.isbn %}, ISBN {{ p.isbn }}{% endif %}
+    {%- elsif p.type == "submitted" -%}
+    Manuscript under review{% if p.venue %}, <em>{{ p.venue }}</em>{% endif %} · {{ p.year }}
     {%- else -%}
     <em itemprop="isPartOf">{{ p.venue }}</em>
     {%- if p.volume %} <span class="vol">{{ p.volume }}</span>{% endif -%}
     {%- if p.issue %}({{ p.issue }}){% endif -%}
     {%- if p.pages %}, {{ p.pages }}{% endif -%}
-    {%- endif %} · <span itemprop="datePublished">{{ p.year }}</span>
+    {%- endif %}{% unless p.type == "submitted" %} · <span itemprop="datePublished">{{ p.year }}</span>{% endunless %}
     {%- if p.note %} · {{ p.note }}{% endif -%}
   </p>
   <div class="pub-actions">

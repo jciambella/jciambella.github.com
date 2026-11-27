@@ -10,7 +10,10 @@
 #   credit:     source, e.g. "From Califano & Ciambella, *Mech. Mater.* 2026."
 #   video:      optional short looping clip shown on the Research page in place of the
 #               still figure, e.g. /assets/video/fracture.mp4 (H.264 MP4, muted, a few
-#               seconds, ideally under ~2 MB). `image` is then used as its poster frame.
+#               seconds, ideally under ~2 MB). The clip spans the full width of the theme
+#               block, and `caption`/`credit` then describe the clip.
+#   poster:     frame shown before the clip plays (defaults to `image`)
+#   video_alt:  one-sentence description of the clip for screen readers
 
 - key: neural
   image: /assets/img/research/neural.webp
@@ -49,8 +52,14 @@
   image: /assets/img/research/fracture.webp
   thumb: /assets/img/research/fracture-thumb.webp
   image_alt: "Two contour plots of a pre-stretched membrane, before and during crack propagation, with the highest values concentrated at the crack tip."
-  caption: "Phase-field simulation of crack propagation in a pre-stretched viscoelastic elastomer membrane: contours of the velocity magnitude ‖u̇‖ just after the cut is introduced (left) and while the crack propagates (right)."
-  credit: "ESMC 2025, Lyon; see Ciambella, Lancioni & Stortini, *Eur. J. Mech. A/Solids* 113 (2025)."
+  video: /assets/video/fracture-phase-field.mp4
+  poster: /assets/img/research/fracture-video-poster.webp
+  video_alt: "Animation of a notched sheet being stretched: the notch opens and a crack then grows from it, while the force–time curve rises to a peak and drops."
+  caption: "Phase-field simulation of a pre-notched viscoelastic sheet stretched at constant rate: damage field, with fully broken material removed to show the crack (left), and force per unit thickness against time (right). The crack barely grows before the force peak and then propagates rapidly as the force drops."
+  credit: "From Ciambella & Lancioni, *A variational phase-field model of fracture in viscoelastic elastomers with damage-accelerated disentanglement*, under review (2026)."
+  # Caption and credit of the still figure, used before the video was added:
+  # caption: "Phase-field simulation of crack propagation in a pre-stretched viscoelastic elastomer membrane: contours of the velocity magnitude ‖u̇‖ just after the cut is introduced (left) and while the crack propagates (right)."
+  # credit: "ESMC 2025, Lyon; see Ciambella, Lancioni & Stortini, *Eur. J. Mech. A/Solids* 113 (2025)."
   title: "Fracture of elastomers"
   short: "Viscoelastic phase-field models of rate-dependent crack propagation."
   body: >-

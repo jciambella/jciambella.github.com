@@ -11,6 +11,7 @@
 {%- case p.type -%}
   {%- when "journal" -%}{%- assign et = "article" -%}
   {%- when "conference" -%}{%- assign et = "inproceedings" -%}
+  {%- when "submitted" -%}{%- assign et = "unpublished" -%}
   {%- else -%}{%- assign et = "book" -%}
 {%- endcase -%}
 {%- if p.key -%}{%- assign key = p.key -%}{%- else -%}{%- capture key -%}{{ fa }}{{ p.year }}{{ kw }}{%- endcapture -%}{%- endif -%}
@@ -40,5 +41,8 @@
 {%- endif %}
 {%- if p.doi %}
   doi       = { {{- p.doi -}} },
+{%- endif %}
+{%- if p.type == "submitted" %}
+  note      = {Under review},
 {%- endif %}
 }

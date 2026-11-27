@@ -758,3 +758,18 @@ a.tile-theme:hover .tile-img img { transform: scale(1.05); }
 /* research clips */
 .theme-video { overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
 .theme-video video { display: block; width: 100%; height: auto; }
+.theme-block.with-fig.with-video, .theme-block.with-fig.with-video.flip {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "text papers" "fig fig";
+}
+.with-video .theme-papers .label { margin-top: 0.4rem; }
+.with-video .theme-figure { margin-top: 1rem; }
+@media (prefers-color-scheme: dark) { .theme-video video { filter: brightness(.93); } }
+@media (max-width: 880px) {
+  .theme-block.with-fig.with-video, .theme-block.with-fig.with-video.flip {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "text" "fig" "papers";
+  }
+}
+.year.year-label { font-size: 1.05rem; line-height: 1.25; padding-top: 0.3rem; }
+.tag-submitted { background: transparent; color: var(--faint); border: 1px dashed color-mix(in srgb, var(--faint) 60%, var(--line)); }

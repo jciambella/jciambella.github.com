@@ -46,6 +46,11 @@ first):
 The publication list, counts, BibTeX, topic pages and "Latest publications"
 on the home page all update from this one entry.
 
+A manuscript under review goes in with `type: submitted` (no venue or DOI
+needed): it is listed first on the Publications page under "Under review" and is
+not counted among the publications. When it is accepted, change the type to
+`journal` and add the venue, volume and DOI.
+
 Optional links shown next to DOI and BibTeX: `pdf:` (a free full text, e.g. the
 accepted manuscript on IRIS Sapienza or arXiv, where the publisher's policy
 allows it), `code:` and `data:`.
@@ -105,9 +110,12 @@ website and give the source in `credit:`.
 
 A theme can also carry a short simulation clip: put an H.264 MP4 (muted, a few
 seconds, ideally under ~2 MB) in `assets/video/` and set `video:` on the theme.
-The Research page then shows the clip in place of the still figure, with
-`image` as its first frame; it plays only while on screen and not at all for
-visitors who ask their system to reduce motion (`assets/js/research.js`).
+The Research page then shows the clip across the full width of the theme, in
+place of the still figure (`poster:` sets the frame shown before it plays,
+`video_alt:` its description for screen readers, and `caption`/`credit` describe
+the clip); it plays only while on screen and not at all for visitors who ask
+their system to reduce motion (`assets/js/research.js`). The Home card keeps
+the still `thumb`/`image`.
 
 ## Photo and CV
 

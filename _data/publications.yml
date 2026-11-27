@@ -1,7 +1,11 @@
 # Publications, newest first (the page groups them by year in this order).
 #
 # Fields
-#   type:     journal | conference | book
+#   type:     journal | conference | book | submitted
+#             (submitted = manuscript under review: listed first on the Publications
+#             page under "Under review" and not counted among the publications;
+#             `venue:` is optional for it, e.g. the journal it is under review at.
+#             When it is accepted, change the type to journal and add venue and DOI)
 #   authors:  "Surname, I." (the entry matching profile.bib_name in _config.yml is shown in bold)
 #   pages:    page range ("932–944") or article number ("105525")
 #   topics:   keys from _data/topics.yml; they drive the Research page and the topic filter
@@ -13,6 +17,13 @@
 #   code:     optional link to the code (e.g. a GitHub repository)
 #   data:     optional link to the data set (e.g. Zenodo)
 #   key:      optional BibTeX key; by default surname + year + first title word
+
+# ---------------------------------------------------------------- under review
+- type: submitted
+  year: 2026
+  title: "A variational phase-field model of fracture in viscoelastic elastomers with damage-accelerated disentanglement"
+  authors: ["Ciambella, J.", "Lancioni, G."]
+  topics: [fracture, visco]
 
 # ---------------------------------------------------------------- 2026
 - type: journal

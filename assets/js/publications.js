@@ -46,7 +46,10 @@
     });
     groups.forEach(function (g) { g.hidden = !g.querySelector(".pub:not([hidden])"); });
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.type === state.type)); });
-    count.textContent = n === items.length ? n + " publications" : n + " of " + items.length;
+    var nSub = items.filter(function (li) { return li.dataset.type === "submitted"; }).length;
+    count.textContent = n === items.length
+      ? (items.length - nSub) + " publications" + (nSub ? " + " + nSub + " under review" : "")
+      : n + " of " + items.length;
     empty.hidden = n > 0;
 
     var url = new URL(window.location.href);

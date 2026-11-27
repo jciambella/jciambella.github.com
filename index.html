@@ -3,7 +3,7 @@ layout: default
 jsonld: true
 ---
 {%- assign p = site.profile -%}
-{%- assign pubs = site.data.publications -%}
+{%- assign pubs = site.data.publications | where_exp: "x", "x.type != 'submitted'" -%}
 {%- assign nj = pubs | where: "type", "journal" | size -%}
 {%- assign g = site.data.people -%}
 {%- assign nphd = g.current.size | plus: g.alumni.size | plus: g.cosupervised.size -%}
