@@ -34,8 +34,9 @@ jsonld: true
       thermodynamics, mechanical testing and computation. My recent work embeds neural
       networks inside thermodynamically admissible rheological models, implemented in an
       open-source finite-element framework built on FEniCSx, and develops viscoelastic
-      phase-field models of rate-dependent fracture in elastomers. I work closely with
-      industry, through industrial collaborations.
+      phase-field models of rate-dependent fracture in elastomers. Much of this work is
+      carried out with industry, from the testing and modelling of filled rubber to
+      magnetorheological elastomers for vibration damping.
     </p>
     {% include profile-links.html %}
   </div>
@@ -87,10 +88,20 @@ jsonld: true
     </ol>
   </div>
   <div class="tile tile-news">
-    <div class="bento-head small"><h2 id="h-news">Highlights</h2></div>
+    <div class="bento-head small">
+      <h2 id="h-news">Highlights</h2>
+      <a class="more" href="{{ '/news/' | relative_url }}">All news {% include icon.html name="arrow" %}</a>
+    </div>
     <ul class="news">
       {%- for n in site.data.news limit: 4 %}
-      <li><span class="date">{{ n.date }}</span><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span></li>
+      {%- assign urn = "" %}
+      {%- if n.linkedin %}{% capture urn %}{% include linkedin-urn.html v=n.linkedin %}{% endcapture %}{% assign urn = urn | strip %}{% endif %}
+      <li>
+        <span class="date">{{ n.date }}</span><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+        {%- if urn != "" %}
+        <a class="news-li" href="https://www.linkedin.com/feed/update/{{ urn }}/">{% include icon.html name="linkedin" %}Discuss on LinkedIn</a>
+        {%- endif %}
+      </li>
       {%- endfor %}
     </ul>
   </div>

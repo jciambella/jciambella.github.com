@@ -99,6 +99,9 @@ service:
     where: "École Centrale de Nantes (2019); University of Manchester (2014); RMIT University (2014); University of Bristol (2012, 2014)"
 
 organisation:
+  - when: "2026"
+    what: "Chair, IUTAM Symposium RAM³"
+    where: "Recent Advances on the Mechanics and Mathematics of Materials. A Young Researchers' Meeting, Rome, 18–20 November 2026"
   - when: "2011 – 2026"
     what: "Organising committees"
     where: "RAM3 – Recent Advances in Mechanics and Mathematics of Materials (2017, 2019, 2021, 2024, 2026); AIMETA 2019; ANCRiSST 2019; EURODYN 2017; ENOC 2011"

@@ -8,6 +8,9 @@
 #   image_alt:  one-sentence description of the figure for screen readers
 #   caption:    caption under the figure on the Research page (Markdown)
 #   credit:     source, e.g. "From Califano & Ciambella, *Mech. Mater.* 2026."
+#   video:      optional short looping clip shown on the Research page in place of the
+#               still figure, e.g. /assets/video/fracture.mp4 (H.264 MP4, muted, a few
+#               seconds, ideally under ~2 MB). `image` is then used as its poster frame.
 
 - key: neural
   image: /assets/img/research/neural.webp

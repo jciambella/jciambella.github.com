@@ -8,6 +8,10 @@
 #   selected: true puts the paper in the "Selected" filter
 #   doi:      without the https://doi.org/ prefix
 #   note:     optional free text, e.g. "In press"
+#   pdf:      optional link to a free full text: open-access version, or the accepted
+#             manuscript on IRIS Sapienza / arXiv where the publisher's policy allows it
+#   code:     optional link to the code (e.g. a GitHub repository)
+#   data:     optional link to the data set (e.g. Zenodo)
 #   key:      optional BibTeX key; by default surname + year + first title word
 
 # ---------------------------------------------------------------- 2026
@@ -18,6 +22,7 @@
   venue: "Mechanics of Materials"
   volume: 212
   pages: "105525"
+  doi: "10.1016/j.mechmat.2025.105525"
   topics: [neural, visco]
   selected: true
 
@@ -37,6 +42,7 @@
   venue: "Applied Mathematical Modelling"
   volume: 152
   pages: "116525"
+  doi: "10.1016/j.apm.2025.116525"
   topics: [fibres, visco]
 
 - type: conference

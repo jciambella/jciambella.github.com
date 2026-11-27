@@ -32,12 +32,12 @@ profile:
   phone: ""           # office phone; the Contact page shows it only when filled in
   office_hours: ""    # e.g. "Tuesday 10:00–12:00, by appointment"
   orcid: "0000-0002-7498-5821"
-  scholar: ""          # Google Scholar user id: the value of ?user= in your profile URL
-  scopus: ""           # Scopus author id
-  researchgate: ""     # e.g. Jacopo-Ciambella
-  linkedin: ""         # e.g. jacopo-ciambella
+  scholar: "wKpE74EAAAAJ"   # Google Scholar user id: the value of ?user= in your profile URL
+  scopus: "36196300000"   # Scopus author id
+  researchgate: "Jacopo-Ciambella"   # the part after researchgate.net/profile/
+  linkedin: "jacopo-ciambella-4730b262"   # the part after linkedin.com/in/
   github: jciambella
-  institutional: ""    # full URL of your Sapienza staff page
+  institutional: "https://jacopociambella.site.uniroma1.it/"   # full URL of your Sapienza staff page
   photo: /assets/img/profile.jpg            # e.g. /assets/img/profile.jpg (square, at least 400×400 px)
   cv_pdf: ""           # e.g. /assets/cv.pdf
 
@@ -56,7 +56,24 @@ social:
   name: Jacopo Ciambella
   links:
     - https://orcid.org/0000-0002-7498-5821
+    - https://scholar.google.com/citations?user=wKpE74EAAAAJ
+    - https://www.scopus.com/authid/detail.uri?authorId=36196300000
+    - https://www.researchgate.net/profile/Jacopo-Ciambella
+    - https://www.linkedin.com/in/jacopo-ciambella-4730b262
     - https://github.com/jciambella
+    - https://jacopociambella.site.uniroma1.it/
+
+# Preview image shown when a page is shared on LinkedIn, X, Slack, e-mail, ...
+# (1200×627 px). A page can override it with its own `image:` in the front matter.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/img/social-card.png
+        width: 1200
+        height: 627
+
 # Paste the token from Google Search Console here to verify ownership:
 # webmaster_verifications:
 #   google: ""

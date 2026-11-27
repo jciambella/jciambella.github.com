@@ -6,6 +6,7 @@ description: >-
   viscoelasticity and viscoplasticity, fracture of elastomers, fibre-reinforced and
   magneto-active soft materials, and structural identification.
 permalink: /research/
+scripts: [/assets/js/research.js]
 ---
 <header class="page-head">
   <h1>Research</h1>
@@ -36,7 +37,11 @@ permalink: /research/
   </div>
   {%- if t.image %}
   <figure class="theme-figure">
+    {%- if t.video %}
+    <div class="theme-video"><video src="{{ t.video | relative_url }}" poster="{{ t.image | relative_url }}" muted loop playsinline controls preload="metadata" data-autoplay aria-label="{{ t.image_alt | default: t.title | escape }}"></video></div>
+    {%- else %}
     <a href="{{ t.image | relative_url }}" title="Open the full-size figure"><img src="{{ t.image | relative_url }}" alt="{{ t.image_alt | default: t.title | escape }}" loading="lazy" decoding="async"></a>
+    {%- endif %}
     {%- if t.caption or t.credit %}
     <figcaption>
       {%- if t.caption %}{{ t.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}

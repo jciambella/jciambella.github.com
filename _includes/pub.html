@@ -31,6 +31,15 @@
     {%- if p.doi %}
     <a class="action" href="https://doi.org/{{ p.doi }}">DOI {% include icon.html name="external" %}</a>
     {%- endif %}
+    {%- if p.pdf %}
+    <a class="action" href="{{ p.pdf }}">Full text {% include icon.html name="external" %}</a>
+    {%- endif %}
+    {%- if p.code %}
+    <a class="action" href="{{ p.code }}">Code {% include icon.html name="external" %}</a>
+    {%- endif %}
+    {%- if p.data %}
+    <a class="action" href="{{ p.data }}">Data {% include icon.html name="external" %}</a>
+    {%- endif %}
     <details class="bibtex">
       <summary class="action">BibTeX</summary>
       <pre>{% include bibtex.html p=p %}</pre>

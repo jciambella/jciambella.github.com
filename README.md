@@ -12,7 +12,7 @@ Personal academic website of Jacopo Ciambella, served by GitHub Pages at
 | Publications                       | `_data/publications.yml`      |
 | Research themes (Home + Research)  | `_data/topics.yml`            |
 | Research figures                   | `assets/img/research/` + `image:` fields in `_data/topics.yml` |
-| Highlights on the home page        | `_data/news.yml`              |
+| News (home "Highlights" + /news/), optional LinkedIn posts | `_data/news.yml` |
 | Invited talks                      | `_data/talks.yml`             |
 | Funded projects                    | `_data/projects.yml`          |
 | Students                           | `_data/people.yml`            |
@@ -22,7 +22,7 @@ Personal academic website of Jacopo Ciambella, served by GitHub Pages at
 | Contact page (office room, phone, office hours) | `_config.yml` → `profile:` (`office`, `phone`, `office_hours`); layout in `contact.html` |
 
 Pages: `index.html`, `research.html`, `publications.html`, `group.html`,
-`cv.html`, `contact.html`. Layout in `_layouts/`, fragments in `_includes/`, styles in
+`cv.html`, `contact.html`, `news.html` (linked from the Highlights tile, not from the menu). Layout in `_layouts/`, fragments in `_includes/`, styles in
 `assets/css/main.css`.
 
 ## Adding a paper
@@ -45,6 +45,37 @@ first):
 
 The publication list, counts, BibTeX, topic pages and "Latest publications"
 on the home page all update from this one entry.
+
+Optional links shown next to DOI and BibTeX: `pdf:` (a free full text, e.g. the
+accepted manuscript on IRIS Sapienza or arXiv, where the publisher's policy
+allows it), `code:` and `data:`.
+
+## Adding a LinkedIn post to the news
+
+Every item in `_data/news.yml` can point to a public LinkedIn post. On LinkedIn,
+open the post, click "⋯" and choose "Copy link to post" (or "Embed this post" and
+copy the code), then add it to the item:
+
+```yaml
+- date: "Nov 2026"
+  text: "Short text shown on the site (Markdown)."
+  linkedin: "https://www.linkedin.com/posts/jacopo-ciambella-4730b262_...-activity-7401234567890123456-AbCd"
+  linkedin_height: 600     # optional; the height="…" value in LinkedIn's embed code
+```
+
+The home page then shows a "Discuss on LinkedIn" link under the item, and
+`/news/` shows the post itself. Nothing is loaded from LinkedIn until the
+visitor clicks "Show the post" (`assets/js/linkedin-embed.js`), so the site
+sets no third-party cookies by default. Short `lnkd.in` links cannot be used,
+and the post must be visible to "Anyone". LinkedIn offers no supported way to
+pull a personal profile's posts automatically, so the list is curated by hand.
+
+## Sharing preview
+
+`assets/img/social-card.png` (1200×627 px) is the image LinkedIn, X, Slack and
+e-mail clients show when a link to the site is shared; it is set under
+`defaults:` in `_config.yml`. After changing it, LinkedIn's Post Inspector
+(linkedin.com/post-inspector) refreshes LinkedIn's cached copy.
 
 ## Look and feel
 
@@ -72,6 +103,12 @@ alternating left and right. Keep files under ~250 kB: about 1400 px wide for
 check that the publisher's author-rights policy allows reuse on a personal
 website and give the source in `credit:`.
 
+A theme can also carry a short simulation clip: put an H.264 MP4 (muted, a few
+seconds, ideally under ~2 MB) in `assets/video/` and set `video:` on the theme.
+The Research page then shows the clip in place of the still figure, with
+`image` as its first frame; it plays only while on screen and not at all for
+visitors who ask their system to reduce motion (`assets/js/research.js`).
+
 ## Photo and CV
 
 Put a square photo (at least 400×400 px) in `assets/img/profile.jpg` and set
@@ -91,9 +128,9 @@ build-essential`).
 
 ## Visibility checklist
 
-- Fill `scholar`, `scopus`, `researchgate`, `linkedin` and `institutional` in
-  `_config.yml`; they become profile links and `sameAs` entries in the
-  structured data that search engines read.
+- `scholar`, `scopus`, `researchgate`, `linkedin` and `institutional` are
+  filled in `_config.yml`. They become profile links and `sameAs` entries in
+  the structured data that search engines read.
 - Register the site in Google Search Console (paste the verification token
   under `webmaster_verifications` in `_config.yml`) and submit
   `https://jciambella.github.io/sitemap.xml`.

@@ -1,4 +1,21 @@
-# Highlights on the home page, newest first. `text` accepts Markdown.
+# News, newest first. The first four appear as "Highlights" on the home page;
+# all of them are listed on /news/. `text` accepts Markdown.
+#
+# Optional LinkedIn post for an item:
+#   linkedin:         paste the post link ("⋯ → Copy link to post") or the code from
+#                     "⋯ → Embed this post" (put embed code in single quotes).
+#                     Short lnkd.in links do not work.
+#                     The post must be visible to "Anyone".
+#   linkedin_height:  height in pixels of the embedded post on /news/ (default 560);
+#                     LinkedIn's embed code shows the right value as height="…".
+#
+# Example:
+# - date: "Nov 2026"
+#   text: "Chaired the IUTAM Symposium **RAM³** in Rome."
+#   linkedin: "https://www.linkedin.com/posts/jacopo-ciambella-4730b262_ram3-activity-7401234567890123456-AbCd"
+
+- date: "Nov 2026"
+  text: "Chaired the IUTAM Symposium **RAM³** – *Recent Advances on the Mechanics and Mathematics of Materials. A Young Researchers' Meeting*, Rome, 18–20 November 2026."
 
 - date: "2026"
   text: "Keynote at the *Advances in Applied Mechanics Conference 2026* in Gran Canaria: **Deep rheological springs and dashpots for data-driven modeling of soft materials**."
